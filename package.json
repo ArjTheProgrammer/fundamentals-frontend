@@ -1,0 +1,14 @@
+{
+  "name": "fundamentals-frontend",
+  "version": "1.0.0",
+  "description": "A basketball skills training website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "globals": "^16.1.0"
+  }
+}
