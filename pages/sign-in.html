@@ -6,7 +6,8 @@
     <title>Sign In</title>
     <link rel="stylesheet" href="/styles/sign-in.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../controllers/sign-in.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -17,10 +18,10 @@
         <div class="form-container">
             <form class="signin-form">
                 <div class="form-group" id="form-group">
-                    <input type="text" id="username" class="form-control" placeholder="Username" required>
+                    <input type="text" id="username" class="form-control" placeholder="Username" autocomplete="username" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="password" class="form-control" placeholder="Password" required>
+                    <input type="password" id="password" class="form-control" placeholder="Password" autocomplete="current-password" required>
                 </div>
 
                 <button type="submit" class="btn">Sign In</button>
@@ -42,7 +43,5 @@
             <button id="closeBtn" class="close-btn">Close</button>
         </div>
     </div>
-    
-    <script src="sign-in.js"></script>
 </body>
 </html>
