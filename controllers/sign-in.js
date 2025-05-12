@@ -6,6 +6,19 @@ document.querySelector('.signin-form').addEventListener('submit', function(e) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
+//     const users = JSON.parse(localStorage.getItem('registered')) || [];
+
+//     const validUser = users.find(user =>
+//         user.username === username && user.password === password
+//     );
+
+//     if (validUser) {
+//         // window.location.href = "homepage/dashboard kung ano man name jan hahahaha.html";
+//     } else {
+//         document.getElementById('errorModal').style.display = 'block';
+//     }
+// });
+
     const user = signinService.getUser(username, password);
     user.then(validUser => {
         if (Array.isArray(validUser) && validUser.length > 0) {

@@ -1,10 +1,10 @@
 import axios from '../axios.js'
 const baseUrl = '/api/signin'
 
-const getUser = async (username, passowrd) => {
+const getUser = async (username, password) => {
     const data = {
         username: username,
-        password: passowrd
+        password: password
     }
     const config = {
         headers: {
