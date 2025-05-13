@@ -3,7 +3,7 @@
     position: fixed;
     width: 115%;
     height: 200px;
-    background-color: #ED8732;
+    background-color: #1C1C1C;
     top: 60%;
     left: -10%;
     transform: rotate(-3deg);
@@ -17,7 +17,7 @@
 
 body {
     background-color: #1C1C1C;
-    color: #fff;
+    color: #fef9f3;
     font-family: 'Inter', sans-serif;
     position: relative;
     min-height: 100vh;
@@ -30,8 +30,8 @@ body:before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50%;
-    background-color: #1C1C1C;
+    height: 90%;
+    background-color: #fef9f3;
     z-index: -2;
 }
 
@@ -42,7 +42,7 @@ body:after {
     left: 0;
     width: 100%;
     height: 30%;
-    background-color: #ED8732;
+    background-color: #1C1C1C;
     z-index: -2;
 }
 
@@ -75,21 +75,22 @@ h1, h2, h3, h4, h5, h6, .nav-link {
 
 .nav-link {
     text-decoration: none;
-    color: #fff;
+    color: #1C1C1C;
     font-weight: 400;
     transition: all 0.3s ease;
     padding: 5px 15px;
     border-radius: 20px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.938);
+    background-color: #1C1C1C;
+    color: #fef9f3;
 }
 
 .nav-link.active {
-    background-color: #fff;
-    color: #000;
+    background-color: #1C1C1C;
+    color: #fef9f3;
     border-radius: 20px;
     padding: 5px 15px;
 }
@@ -98,6 +99,7 @@ h1, h2, h3, h4, h5, h6, .nav-link {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    border: 2px, solid black;
     object-fit: cover;
 }
 
@@ -139,8 +141,8 @@ h1, h2, h3, h4, h5, h6, .nav-link {
     line-height: 0.9;
     margin-bottom: 20px;
     text-align: center;
+    color: #1C1C1C;
 }
-
 .orange-text {
     color: #FF9136;
 }
@@ -151,6 +153,7 @@ h1, h2, h3, h4, h5, h6, .nav-link {
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    color: #1C1C1C;
 }
 
 .hero-images {
@@ -177,23 +180,23 @@ h1, h2, h3, h4, h5, h6, .nav-link {
 
 .athlete1 {
     right: 250px;
-    top: -170px;
-    width: 80px;
-    height: 80px;
+    top: -150px;
+    width: 90px;
+    height: 90px;
 }
 
 .athlete2 {
     right: 150px;
-    top: -70px;
+    top: -50px;
     width: 120px;
     height: 120px;
 }
 
 .athlete3 {
     right: 290px;
-    top: 25px;
-    width: 80px;
-    height: 80px;
+    top: 50px;
+    width: 90px;
+    height: 90px;
 }
 
 /* Workouts Grid */
@@ -207,7 +210,7 @@ h1, h2, h3, h4, h5, h6, .nav-link {
 }
 
 .workout-card {
-    background-color: #fff;
+    background-color: #FF9136;
     color: #000;
     border-radius: 15px;
     padding: 25px;
@@ -233,8 +236,8 @@ h1, h2, h3, h4, h5, h6, .nav-link {
 }
 
 .tag {
-    background-color: #ff7700;
-    color: #fff;
+    background-color: #fef9f3;
+    color: #1C1C1C;
     padding: 3px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -245,7 +248,7 @@ h1, h2, h3, h4, h5, h6, .nav-link {
 .workout-description {
     font-size: 0.9rem;
     line-height: 1.4;
-    color: #555;
+    color: #1C1C1C;
     font-family: 'Inter', sans-serif;
 }
 
