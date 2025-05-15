@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="/styles/homepage.css"">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="header">
+        <header class="left">
+            <div>
+                <img src="/assets/fundalogo.png" class="logo">
+            </div>
+        </header>
+
+        <header class="right">
+            <nav class="nav-links">
+            <a href="#" class="active">HOME</a>
+            <a href="#">DRILLS</a>
+            <a href="#">WORKOUT</a>
+            </nav>
+            <div class="user-profile">
+                <img src="/assets/player.png" alt="User Profile" onclick="toggleMenu()">
+            </div>
+            <div class="menu-container" id="menuOpen">
+                <div class="menu">
+                    <a href="" class="menu-link">
+                        <p>PROFILE</p>
+                        <span>></span>
+                    </a>
+                    <a href="" class="menu-link">
+                        <p>SETTINGS</p>
+                        <span>></span>
+                    </a>
+                    <a href="" class="menu-link">
+                        <p>LOG OUT</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <section class="left-panel">
+            <div class="left-image">
+                <img src="/assets/player.png" alt="">
+            </div>
+        </section>
+
+        <section class="right-panel">
+            <div class="top">
+                <div class="top-contents">
+                    <div class="welcome-user">
+                        <h1>HI, USER</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus dignissimos repellendus quam est consequatur perferendis. Facilis laborum ratione velit reiciendis magni, tempore nisi blanditiis a nihil aliquam ea labore at?</p>
+                    </div>
+
+                    <div class="welcome-image">
+                        <img src="/assets/ballwithhand.png" alt="Welcome Image">
+                    </div>
+                </div>      
+            </div>
+
+            <div class="bottom">
+                <div class="bot">
+                    <div class="user-progress">
+                        <h1>Your Progress</h1>
+                        <div class="skill-row">
+                            <span class="skill-value">40</span>
+                            <span class="skill-name">Dribbling</span>
+                            <div class="skill-line"></div>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-value">24</span>
+                            <span class="skill-name">Shooting</span>
+                            <div class="skill-line"></div>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-value">20</span>
+                            <span class="skill-name">Passing</span>
+                            <div class="skill-line"></div>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-value">16</span>
+                            <span class="skill-name">Defense</span>
+                            <div class="skill-line"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="donut-holder">
+                        <div class="news-content">
+                            <div class="donut-chart" id="donutChart">
+                                <!-- based sa pagssearch q javascript n daw tong donut -->
+                                <div class="donut-hole"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+  <script src="/controllers/homepage.js"></script>
+</body>
+</html>
