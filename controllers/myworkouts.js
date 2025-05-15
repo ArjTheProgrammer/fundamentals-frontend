@@ -41,22 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Simulate loading athlete images (for production, replace with real images)
-    const athleteImages = document.querySelectorAll('.athlete-image');
-    const placeholderColors = ['#ff7700', '#ff9900', '#ffaa00'];
-    
-    athleteImages.forEach((img, index) => {
-        // This is a placeholder - in production, you would use real athlete images
-        img.style.backgroundColor = placeholderColors[index % placeholderColors.length];
-    });
-    
-    // Simulate loading basketball image (for production, replace with real image)
-    const basketballImage = document.querySelector('.basketball-image');
-    if (basketballImage) {
-        // This is a placeholder - in production, you would use a real basketball image
-        basketballImage.src = 'https://via.placeholder.com/180';
-    }
-    
     // Add subtle animation to hero section
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
