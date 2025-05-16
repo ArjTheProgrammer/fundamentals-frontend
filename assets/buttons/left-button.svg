@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="125" height="130" viewBox="0 0 125 130" fill="none">
+  <g style="mix-blend-mode:multiply" filter="url(#filter0_f_4_93)">
+    <ellipse cx="62.5" cy="69" rx="32.5" ry="31" fill="#222222" fill-opacity="0.28"/>
+  </g>
+  <foreignObject x="-36" y="-64" width="197" height="198"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(32px);clip-path:url(#bgblur_0_4_93_clip_path);height:100%;width:100%"></div></foreignObject><path data-figma-bg-blur-radius="64" d="M62.5 1C80.988 1 96 16.2087 96 35C96 53.7913 80.988 69 62.5 69C44.012 69 29 53.7913 29 35C29 16.2087 44.012 1 62.5 1Z" fill="#ED8732" stroke="url(#paint0_linear_4_93)" stroke-width="2"/>
+  <path d="M65.75 45.5L55 34.75L65.75 24" stroke="#FEF9F3" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <filter id="filter0_f_4_93" x="0" y="8" width="125" height="122" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_4_93"/>
+    </filter>
+    <clipPath id="bgblur_0_4_93_clip_path" transform="translate(36 64)"><path d="M62.5 1C80.988 1 96 16.2087 96 35C96 53.7913 80.988 69 62.5 69C44.012 69 29 53.7913 29 35C29 16.2087 44.012 1 62.5 1Z"/>
+  </clipPath><linearGradient id="paint0_linear_4_93" x1="28" y1="0" x2="97" y2="70" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#FEF9F3"/>
+  <stop offset="1" stop-color="#DCDCDC" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

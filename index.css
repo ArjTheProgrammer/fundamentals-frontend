@@ -221,12 +221,45 @@ body {
 }
 
 .testimonial-cards {
-  margin: 80px 0 100px 0;
+  margin: 80px 0 10px 0;
   display: flex;
   gap: 150px;
-  padding: 100px 50px;
+  padding: 50px 100px;
   overflow-y: hidden;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.carousel-btn {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.1);
+}
+
+/* .testimonial-cards::-webkit-scrollbar-thumb {
+  background: #ed8732;
+  border-radius: 8px;
+}
+
+.testimonial-cards::-webkit-scrollbar {
+  height: 12px; 
+  background: transparent; 
+} */
 
 .testimonial-card {
   position: relative;
