@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -194,9 +193,11 @@ body {
 
 /*testimonial*/
 .testimonial {
+  position: relative;
   background-color: #1c1c1c;
-  padding: 80px 0 80px 0;
+  padding: 80px 0 10px 0;
   color: #fef9f3;
+  overflow: hidden;
 }
 
 .testimonial-titles {
@@ -207,6 +208,7 @@ body {
 
 .testimonial-title {
   font-family: "Bebas Neue";
+  margin-top: clamp(100px, 0px, 0px);
   font-size: clamp(50px, 128px, 30vw);
   color: #ed8732;
 }
@@ -234,6 +236,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
+  padding-bottom: 100px;
   margin: 0 auto;
 }
 
@@ -314,6 +317,249 @@ body {
   font-weight: 500;
 }
 
+.ball.first {
+  position: absolute;
+  top: clamp(0px, 2vw, 20px);
+  left: clamp(-20px, -5vw, -80px);
+  width: clamp(140px, 15vw, 287px);
+  height: auto;
+  transform: rotate(-8.517deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+.ball.second {
+  position: absolute;
+  top: clamp(110px, 15vw, 171px);
+  left: clamp(10%, 10%, 15%);
+  width: clamp(85px, 10vw, 171px);
+  height: auto;
+  transform: rotate(7.78deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  opacity: 0.5;
+}
+
+.ball.third {
+  position: absolute;
+  right: clamp(5%, 10%, 15%);
+  bottom: clamp(-100px, -50px, 0vw);
+  width: clamp(150px, 15vw, 287px);
+  height: auto;
+  transform: rotate(10.685deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+.ball.fourth {
+  position: absolute;
+  bottom: clamp(40px, 200vh, 80px);
+  right: clamp(2%, 3%, 5%);
+  width: clamp(100px, 10vw, 171px);
+  height: auto;
+  transform: rotate(-12.526deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  opacity: 0.5;
+}
+
+/* Current ball styles remain the same */
+.ball.first {
+  position: absolute;
+  top: clamp(0px, 2vw, 20px);
+  left: clamp(-20px, -5vw, -80px);
+  width: clamp(140px, 15vw, 287px);
+  height: auto;
+  transform: rotate(-8.517deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+.ball.second {
+  position: absolute;
+  top: clamp(110px, 15vw, 171px);
+  left: clamp(10%, 10%, 15%);
+  width: clamp(85px, 10vw, 171px);
+  height: auto;
+  transform: rotate(7.78deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  opacity: 0.5;
+}
+
+.ball.third {
+  position: absolute;
+  right: clamp(5%, 10%, 15%);
+  bottom: clamp(-100px, -50px, 0vw);
+  width: clamp(150px, 15vw, 287px);
+  height: auto;
+  transform: rotate(10.685deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+.ball.fourth {
+  position: absolute;
+  bottom: clamp(40px, 8vh, 80px);
+  right: clamp(2%, 3%, 5%);
+  width: clamp(100px, 10vw, 171px);
+  height: auto;
+  transform: rotate(-12.526deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  opacity: 0.5;
+}
+
+/* Mirror positions in media query */
+@media screen and (max-width: 768px) {
+  .testimonial-cards {
+    gap: 80px;
+    padding: 50px 20px;
+  }
+
+  .testimonial-card {
+    width: 85%;
+    min-width: 280px;
+  }
+
+  /* First ball - move from left to right */
+  .ball.first {
+    left: auto; /* Remove left positioning */
+    right: clamp(-20px, -5vw, -80px); /* Mirror to right side */
+    width: clamp(100px, 12vw, 200px); /* Slightly smaller */
+    transform: rotate(8.517deg); /* Reverse rotation */
+  }
+
+  /* Second ball - move from left to right */
+  .ball.second {
+    left: auto; /* Remove left positioning */
+    right: clamp(10%, 10%, 15%); /* Mirror to right side */
+    width: clamp(60px, 8vw, 120px); /* Slightly smaller */
+    transform: rotate(-7.78deg); /* Reverse rotation */
+  }
+
+  /* Third ball - move from right to left */
+  .ball.third {
+    right: auto; /* Remove right positioning */
+    left: clamp(5%, 10%, 15%); /* Mirror to left side */
+    width: clamp(100px, 12vw, 200px); /* Slightly smaller */
+    transform: rotate(-10.685deg); /* Reverse rotation */
+  }
+
+  /* Fourth ball - move from right to left */
+  .ball.fourth {
+    right: auto; /* Remove right positioning */
+    left: clamp(2%, 3%, 5%); /* Mirror to left side */
+    width: clamp(60px, 8vw, 120px); /* Slightly smaller */
+    transform: rotate(12.526deg); /* Reverse rotation */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .testimonial-cards {
+    gap: 60px;
+    padding: 40px 10px;
+  }
+
+  .testimonial-card {
+    width: 90%;
+    padding: 15px 10px;
+  }
+
+  .players {
+    top: -30px;
+  }
+
+  /* Further adjust sizes but keep mirrored positions */
+  .ball.first {
+    right: -10px;
+    width: clamp(80px, 10vw, 150px);
+  }
+
+  .ball.second {
+    right: 3%;
+    width: clamp(40px, 6vw, 80px);
+  }
+
+  .ball.third {
+    left: 3%;
+    width: clamp(80px, 10vw, 150px);
+  }
+
+  .ball.fourth {
+    left: 1%;
+    width: clamp(40px, 6vw, 80px);
+  }
+}
+
+/* Current ball styles remain the same */
+.ball.first {
+  position: absolute;
+  top: clamp(0px, 2vw, 20px);
+  left: clamp(-20px, -5vw, -80px);
+  width: clamp(140px, 15vw, 287px);
+  height: auto;
+  transform: rotate(-8.517deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+.ball.second {
+  position: absolute;
+  top: clamp(110px, 15vw, 171px);
+  left: clamp(10%, 10%, 15%);
+  width: clamp(85px, 10vw, 171px);
+  height: auto;
+  transform: rotate(7.78deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  opacity: 0.5;
+}
+
+.ball.third {
+  position: absolute;
+  right: clamp(5%, 10%, 15%);
+  bottom: clamp(-100px, -50px, 0vw);
+  width: clamp(150px, 15vw, 287px);
+  height: auto;
+  transform: rotate(10.685deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+.ball.fourth {
+  position: absolute;
+  bottom: clamp(40px, 8vh, 80px);
+  right: clamp(1%, 2%, 5%);
+  width: clamp(100px, 10vw, 171px);
+  height: auto;
+  transform: rotate(-12.526deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 580px) {
+  .ball.first {
+    left: auto;
+    top: -2%;
+    right: -2%;
+  }
+
+  .ball.second {
+    left: auto;
+    right: -5%;
+  }
+
+  .ball.third {
+    left: 5%;
+    bottom: -5%;
+  }
+
+  .ball.fourth {
+    left: -3%;
+  }
+}
 /* @media screen and (max-width: 768px) {
   .testimonial-cards {
     gap: 80px;
