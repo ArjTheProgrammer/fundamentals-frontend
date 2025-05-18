@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to center a specific card
   function centerCard(index) {
     if (index < 0) index = totalCards - 1; // Loop to the end
-    if (index >= totalCards) index = 0;    // Loop to the beginning
+    if (index >= totalCards) index = 0; // Loop to the beginning
 
     currentIndex = index;
     const card = cards[index];
