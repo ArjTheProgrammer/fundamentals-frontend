@@ -592,7 +592,7 @@ body {
 .about-us {
   background-color: #1c1c1c;
   color: #fef9f3;
-  padding-bottom: 40px;
+  padding-bottom: clamp(20px, 10vh, 40px);
 }
 
 .about-us-header {
@@ -665,4 +665,91 @@ body {
 
 .about-us-title p {
   font-size: clamp(12px, 3vw, 20px);
+}
+
+.about-us-content p {
+  position: relative;
+  z-index: 4;
+  width: clamp(
+    280px,
+    calc(280px + (740 - 280) * ((100vw - 500px) / (1200 - 500))),
+    740px
+  );
+  margin: clamp(
+      10px,
+      calc(10px + (40 - 10) * ((100vw - 500px) / (1200 - 500))),
+      40px
+    )
+    0
+    clamp(10px, calc(10px + (40 - 10) * ((100vw - 500px) / (1200 - 500))), 40px)
+    clamp(10px, calc(10px + (50 - 10) * ((100vw - 500px) / (1200 - 500))), 50px);
+  padding: clamp(
+    15px,
+    calc(15px + (30 - 15) * ((100vw - 500px) / (1200 - 500))),
+    30px
+  );
+  line-height: 1.8;
+  font-size: clamp(
+    12px,
+    calc(12px + (20 - 12) * ((100vw - 500px) / (1200 - 500))),
+    20px
+  );
+}
+
+.about-us-content {
+  position: relative;
+}
+
+.about-player {
+  position: absolute;
+  top: -100px;
+  right: -50px;
+  max-height: 660px;
+  max-width: 660px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 0.3s, top 0.3s, right 0.3s;
+}
+
+@media screen and (max-width: 992px) {
+  .about-player {
+    top: -60px;
+    right: -20px;
+    max-width: 500px;
+    max-height: 500px;
+    opacity: 0.8;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-player {
+    top: -20px;
+    right: -10px;
+    max-width: 400px;
+    max-height: 400px;
+    opacity: 0.7;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about-player {
+    top: 0;
+    right: -30px;
+    max-width: 310px;
+    max-height: 310px;
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-player {
+    top: 20%;
+    left: 50%;
+    max-width: 280px;
+    max-height: 280px;
+    opacity: 0.4;
+  }
 }
