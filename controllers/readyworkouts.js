@@ -1,6 +1,6 @@
 // Wait for DOM to fully load
-document.addEventListener('DOMContentLoaded', function() { 
-
+document.addEventListener('DOMContentLoaded', function() {
+ 
     // Add hover effect to workout cards
     const workoutCards = document.querySelectorAll('.workout-card');
     
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
         });
         
-        
+    
         card.addEventListener('click', function() {
             console.log('Workout clicked:', this.querySelector('.workout-title').textContent);
             this.style.transform = 'scale(0.98)';
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add subtle animation to hero section
+    // Add animation to hero section
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
         heroTitle.style.opacity = '0';
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
     
-    // Add staggered animation to workout cards
+    // Add animation to workout cards
     workoutCards.forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
