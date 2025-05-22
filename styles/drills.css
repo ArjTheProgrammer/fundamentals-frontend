@@ -48,3 +48,31 @@ nav {
   overflow: hidden;
   cursor: pointer;
 }
+
+.hero {
+  background: linear-gradient(
+    177deg,
+    #ffffff 0%,
+    #ffffff 70%,
+    #ffffff 70%,
+    #ffffff 70%,
+    #1c1c1c 71%
+  );
+  display: flex;
+  justify-content: space-between;
+  padding: 20px clamp(10px, 10%, 100px);
+}
+
+.title h1 {
+  font-family: "Bebas Neue";
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 120%;
+}
+
+.title p {
+  font-size: (0.5rem, 1vw, 1rem);
+}
+
+.hero img {
+  height: clamp(200px, 30vw, 500px);
+}
