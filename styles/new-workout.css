@@ -26,16 +26,14 @@ body {
 }
 
 .bg-img {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0; /* Position from right instead of left */
-  height: 100%; /* This will be constrained by the aspect-ratio */
-  width: 50%; /* Base width, will scale responsively */
-  max-width: 602px; /* Maximum width */
+  right: 0;
+  height: 100%;
+  width: clamp(600px, 600px, 36.04vw);
   background-size: cover;
   background-position: center;
   z-index: 0;
-  aspect-ratio: 1/1.5; /* Adjust this ratio to match your image's natural proportions */
 }
 
 .workoutName-container{
@@ -54,7 +52,7 @@ body {
 }
 
 .newWorkout p {
-  font-size: 128px;
+  font-size: clamp(50px, 128px, 10vw);
   font-family: 'Bebas Neue', sans-serif;
   height: 100px;
   margin: 0;
@@ -72,7 +70,7 @@ body {
 }
 
 input[type="text"] {
-  width: clamp(20px, 350px, 70vw);
+  width: clamp(20px, 500px, 22vw);
   padding: 0.8rem;
   font-size: 1rem;
   border-radius: 10px;
@@ -96,7 +94,7 @@ input[type="text"] {
   background: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  width: clamp(200px, 815px, 71vw);
+  width: clamp(200px, 815px, 72vw);
   font-family: 'Inter', sans-serif;
 }
 
@@ -360,148 +358,197 @@ button.cancel {
 }
 
 
-@media screen and (min-width: 1209px) and (max-width: 1296px) {
-    .workout-name{
-      margin-top: 50px;
-    }
-  
-    .bg-img{
-      width: 50%;
-    }
-}
-
-@media screen and (min-width: 922px) and (max-width: 1208px) {
-    .workout-name{
-      margin-top: 25px;
-    }
-  
-  .bg-img{
-      width: 50%;
-    }
-
-    .create-workout-container{
-      flex-direction: column;
-    }
-
-    .button{
-      margin-top: 0px;
-    }
-  
-}
-
-@media screen and (max-width: 921px) {
-    .workout-name{
-      margin-top: 25px;
-    }
-  
-  .bg-img{
-      width: 50%;
-    }
-
-    .create-workout-container{
-      flex-direction: column;
-    }
-
-    .button{
-      margin-top: 0px;
-    }
-  
-}
-
-@media screen and (max-width: 810px) {
+@media (min-width: 931px) and (max-width: 1209px) {
   .workout-name{
-    margin-top: 15px;
+    margin-top: 20px;
   }
-  .bg-img{
-    width: 50%;
-  }
-  .newWorkout p {
-    font-size: 120px;
-  }
-
   .create-workout-container{
     flex-direction: column;
   }
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width: clamp(200px, 815px, 100vw);
+    font-family: 'Inter', sans-serif;
+  }
 
+  .drill-list {
+    max-height: 300px;
+    overflow-y: auto;
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: clamp(200px, 800px, 100vw);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-family: 'Inter', sans-serif;
+    flex-wrap: wrap;
+  }
   .button{
     margin-top: 0px;
   }
 }
 
-@media screen and (max-width: 802px) {
+@media (max-width: 930px) {
   .workout-name{
-    margin-top: 15px;
-  }
-
-  .bg-img{
-    width: 50%;
+    margin-top: 50px;
   }
   .newWorkout p {
-    font-size: 94px;
-    height: 70px;
+    height: 40px;
   }
+
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width: clamp(200px, 815px, 87vw);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .drill-list {
+    max-height: 300px;
+    overflow-y: auto;
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: clamp(200px, 800px, 85vw);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-family: 'Inter', sans-serif;
+    flex-wrap: wrap;
+  }
+
+  input[type="text"] {
+    width: clamp(20px, 500px, 40vw);
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 1.5rem;
+  }
+
   .create-workout-container{
     flex-direction: column;
   }
-
   .button{
     margin-top: 0px;
   }
 }
 
-@media screen and (max-width: 594px) {
+@media (max-width: 800px) {
   .workout-name{
-    margin-top: 0px;
+    margin-top: 20px;
+  }
+  .newWorkout p {
+    height: 60px;
+  }
+
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width: clamp(200px, 815px, 85vw);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .drill-list {
+    max-height: 300px;
+    overflow-y: auto;
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: clamp(200px, 800px, 83vw);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-family: 'Inter', sans-serif;
+    flex-wrap: wrap;
+  }
+
+  input[type="text"] {
+    width: clamp(20px, 500px, 50vw);
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 1.5rem;
   }
 
   .bg-img{
-    
-    aspect-ratio: auto;
+    left: 30%;
+  }
+  .create-workout-container{
+    flex-direction: column;
+  }
+  .button{
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .workout-name{
+    margin-top: 0px;
   }
   .newWorkout p {
-    font-size: 71px;
     height: 60px;
   }
   .create-workout-container{
     flex-direction: column;
   }
 
-  .button{
-    margin-top: 0px;
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width: clamp(200px, 815px, 78vw);
+    font-family: 'Inter', sans-serif;
   }
-}
 
-@media screen and (max-width: 449px) {
-
-  .container{
-    overflow: hidden;
+  .drill-list {
+    max-height: 300px;
+    overflow-y: auto;
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: clamp(200px, 800px, 75vw);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-family: 'Inter', sans-serif;
+    flex-wrap: wrap;
   }
-  .workoutName-container{
-    margin: 0;
+
+  input[type="text"] {
+  width: clamp(20px, 500px, 72vw);
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 1.5rem;
   }
 
   .bg-img{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    display: none;
   }
-  .newWorkout p {
-    font-size: 60px;
-    margin: 0;
-    height: 50px;
-  }
-
-  .workout-name{
-    margin-top: 0px;
-  }
-
-  .create-workout-container{
-    flex-direction: column;
-  }
-
   .button{
     margin-top: 0px;
   }
