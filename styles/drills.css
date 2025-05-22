@@ -4,11 +4,16 @@
   font-family: "Inter", sans-serif;
 }
 
+body {
+  background-color: #1c1c1c;
+}
+
 nav {
   padding: 20px clamp(10px, 5%, 40px);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: white;
 }
 
 .nav-links {
@@ -70,9 +75,53 @@ nav {
 }
 
 .title p {
-  font-size: (0.5rem, 1vw, 1rem);
+  font-size: clamp(0.7rem, 2vw, 4rem);
 }
 
 .hero img {
   height: clamp(200px, 30vw, 500px);
+}
+
+.skills {
+  background-color: #1c1c1c;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 50px;
+  padding: clamp(10px, 50vw, 20px);
+  margin-bottom: 50px;
+}
+
+.skill-card {
+  background-color: #ed8732;
+  width: clamp(200px, 25vw, 350px);
+  height: auto;
+  padding: clamp(0px, 10vw, 30px) clamp(10px, 10vw, 20px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3px, 1vw, 10px);
+}
+
+.skill-card h2 {
+  font-family: "Bebas Neue";
+  font-size: clamp(1rem, 5vw, 3rem);
+  line-height: 120%;
+}
+
+.tag-container {
+  margin: 10px 0px;
+}
+
+.tag-container span {
+  background-color: #fef9f3;
+  padding: 0px 10px;
+  border-radius: 20px;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+.skill-card p {
+  font-style: italic;
+  font-size: clamp(0.7rem, 1vw, 1rem);
 }
