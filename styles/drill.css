@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(
+      rgba(28, 28, 28, 0.55),
+      rgba(28, 28, 28, 0.55)
+    ),
+    url("../assets/drills/drill-hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 50px;
+  background-color: #1c1c1c8d;
+}
+
+nav {
+  padding: 20px clamp(10px, 10%, 40px);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 10%, 100px);
+  margin-bottom: clamp(20px, 10%, 30px);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: clamp(0.5rem, 1vw, 1rem);
+  color: white;
+}
+
+.nav-link:hover {
+  background-color: #fef9f3;
+  color: #1c1c1c;
+}
+
+.nav-link.active {
+  background-color: #fef9f3;
+  color: #1c1c1c;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.hero h1 {
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  font-size: clamp(30px, 5vw, 150px);
+  margin-bottom: 10px;
+  color: #ed8732;
+}
+
+.hero p {
+  font-size: clamp(10px, 1vw, 20px);
+  color: #fef9f3;
+}
