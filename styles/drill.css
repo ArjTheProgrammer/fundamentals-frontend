@@ -24,6 +24,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 90%;
   gap: clamp(10px, 10%, 100px);
   margin-bottom: clamp(20px, 10%, 30px);
 }
@@ -72,7 +73,7 @@ nav {
 
 .drill-card {
   width: clamp(150px, 30vw, 370px);
-  height: clamp(210px, 35vh, 370px);
+  height: clamp(210px, 35vh, 280px);
   background-color: #ed8732;
   display: flex;
   flex-direction: column;
