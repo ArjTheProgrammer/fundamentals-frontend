@@ -54,7 +54,7 @@ nav {
 .hero h1 {
   font-family: "Bebas Neue";
   font-weight: 400;
-  font-size: clamp(30px, 5vw, 150px);
+  font-size: clamp(50px, 5vw, 150px);
   margin-bottom: 10px;
   color: #ed8732;
 }
@@ -72,7 +72,7 @@ nav {
 
 .drill-card {
   width: clamp(150px, 30vw, 370px);
-  height: auto;
+  height: clamp(210px, 35vh, 370px);
   background-color: #ed8732;
   display: flex;
   flex-direction: column;
