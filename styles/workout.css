@@ -52,3 +52,30 @@ nav {
   overflow: hidden;
   cursor: pointer;
 }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 100px;
+  gap: 50px;
+  background: linear-gradient(
+    120deg,
+    #fef9f3 0%,
+    #fef9f3 40%,
+    #ed8732 40%,
+    #ed8732 77%,
+    #fef9f3 77%,
+    #fef9f3 100%
+  );
+}
+
+.hero-text {
+  margin-left: 100px;
+}
+
+.hero h1 {
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  font-size: 8rem;
+}

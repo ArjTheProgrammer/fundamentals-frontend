@@ -1,124 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Workout</title>
-    <link rel="stylesheet" href="/styles/new-workout.css">
+    <link rel="stylesheet" href="/styles/new-workout.css" />
     <script src="/controllers/new-workout.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
+      <img src="/assets/new-workout.png" alt="" class="bg-img" />
 
-        <img src="/assets/player.png" alt="" class="bg-img">
-        
-        <div class="workoutName-container">
-            <div class="newWorkout">    
-                <p>NEW WORKOUT</p>
-            </div>
-
-            <div class="workout-name">
-                <label for="workoutName">
-                    <p>Workout name</p>
-                </label>
-                <input type="text" id="workoutName" placeholder="Enter workout name" />
-            </div>
-            
+      <div class="workoutName-container">
+        <div class="newWorkout">
+          <p>NEW WORKOUT</p>
         </div>
 
-        <div class="create-workout-container">
-            <div class="create-workout">
-                <h3>Skills and Drills</h3>
-                <div class="categories">
-                    <label><input type="radio" name="category" checked />
-                       <p>All</p>
-                    </label>
-                    <label><input type="radio" name="category" />
-                        <p>Dribbling</p>
-                    </label>
-                    <label><input type="radio" name="category" />
-                        <p>Passing</p>
-                    </label>
-                    <label><input type="radio" name="category" />
-                        <p>Defense</p>
-                    </label>
-                    <label><input type="radio" name="category" />
-                        <p>Shooting</p>
-                    </label>
-                    <label><input type="radio" name="category" />
-                        <p>Rebounding</p>
-                    </label>
-                </div>
-
-                <div class="drill-list">
-                    <label class="drill">   
-                        <input type="checkbox" />
-                        <div>
-                            <strong>Stationary Crossovers</strong>
-                            <input 
-                            type="text" 
-                            value="Stay low and perform fast crossovers in place." 
-                            id="inputs"/>
-                        </div>
-                    </label>
-                    <label class="drill">
-                        <input type="checkbox" checked />
-                        <div>
-                            <strong>Pound + Change Drill</strong>
-                            <input 
-                            type="text" 
-                            value="3 hard dribbles (pound dribble), then crossover or between the legs. Repeat."
-                            />
-                        </div>
-                    </label>
-                    <label class="drill">
-                        <input type="checkbox" />
-                        <div>
-                            <strong>Figure 8 Dribbling (No Look)</strong>
-                            <input 
-                            type="text" 
-                            value="Dribble in and out of your legs in a figure-8 pattern while keeping your eyes up." 
-                            />
-                        </div>
-                    </label>
-                    <label class="drill">
-                        <input type="checkbox" />
-                        <div>
-                            <strong>Cone/Imaginary Defender Drill</strong>
-                            <input 
-                            type="text" 
-                            value="Place cones (or imagine defenders) and perform combos at each cone (e.g., crossover → spin)."
-                            />
-                        </div>
-                    </label>
-                </div>
-            </div>
-        
-            <div class="buttons">
-                <div class="button">
-                    <button class="create" onclick="createWorkout()">
-                        <p>Create</p>
-                    </button>
-                    <button class="cancel" onclick="cancelWorkout()">
-                        <p>Cancel</p>
-                    </button>
-                </div>
-            </div>
+        <div class="workout-name">
+          <label for="workoutName">
+            <p>Workout name</p>
+          </label>
+          <input
+            type="text"
+            id="workoutName"
+            placeholder="Enter workout name"
+          />
         </div>
-            
+      </div>
+
+      <div class="create-workout-container">
+        <div class="create-workout">
+          <h3>Skills and Drills</h3>
+          <div class="categories">
+            <label
+              ><input type="radio" name="category" checked />
+              <p>All</p>
+            </label>
+            <label
+              ><input type="radio" name="category" />
+              <p>Dribbling</p>
+            </label>
+            <label
+              ><input type="radio" name="category" />
+              <p>Passing</p>
+            </label>
+            <label
+              ><input type="radio" name="category" />
+              <p>Defense</p>
+            </label>
+            <label
+              ><input type="radio" name="category" />
+              <p>Shooting</p>
+            </label>
+            <label
+              ><input type="radio" name="category" />
+              <p>Rebounding</p>
+            </label>
+          </div>
+
+          <div class="drill-list">
+            <label class="drill">
+              <input type="checkbox" />
+              <div>
+                <strong>Stationary Crossovers</strong>
+                <input
+                  type="text"
+                  value="Stay low and perform fast crossovers in place."
+                  id="inputs"
+                />
+              </div>
+            </label>
+            <label class="drill">
+              <input type="checkbox" /> 
+              <div>
+                <strong>Pound + Change Drill</strong>
+                <input
+                  type="text"
+                  value="3 hard dribbles (pound dribble), then crossover or between the legs. Repeat."
+                />
+              </div>
+            </label>
+            <label class="drill">
+              <input type="checkbox" />
+              <div>
+                <strong>Figure 8 Dribbling (No Look)</strong>
+                <input
+                  type="text"
+                  value="Dribble in and out of your legs in a figure-8 pattern while keeping your eyes up."
+                />
+              </div>
+            </label>
+            <label class="drill">
+              <input type="checkbox" />
+              <div>
+                <strong>Cone/Imaginary Defender Drill</strong>
+                <input
+                  type="text"
+                  value="Place cones (or imagine defenders) and perform combos at each cone (e.g., crossover → spin)."
+                />
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <div class="button">
+            <button class="create" onclick="createWorkout()">
+              <p>Create</p>
+            </button>
+            <button class="cancel" onclick="cancelWorkout()">
+              <p>Cancel</p>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="modal" id="previewModal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" id="closeModal" style="cursor:pointer;float:right;font-size:24px;">&times;</span>
-            <p>CREATE WORKOUT</p>
-            <div id="previewContent"></div>
-            <button id="confirmCreate">Create</button>
-        </div>
+    <div class="modal" id="previewModal" style="display: none">
+      <div class="modal-content">
+        <span
+          class="close"
+          id="closeModal"
+          style="cursor: pointer; float: right; font-size: 24px"
+          >&times;</span
+        >
+        <p>CREATE WORKOUT</p>
+        <div id="previewContent"></div>
+        <button id="confirmCreate">Create</button>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>
