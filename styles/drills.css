@@ -100,6 +100,7 @@ nav {
   padding: clamp(0px, 10vw, 30px) clamp(10px, 10vw, 20px);
   border-radius: 20px;
   display: flex;
+  cursor: pointer;
   flex-direction: column;
   gap: clamp(3px, 1vw, 10px);
 }
