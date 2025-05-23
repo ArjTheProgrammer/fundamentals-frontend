@@ -24,7 +24,7 @@ window.createWorkout = function() {
 };
 
 window.cancelWorkout = function() {
-    window.location.href = '/';
+    window.location.href = 'myworkouts.html';
 };
 
 document.addEventListener('DOMContentLoaded', function() {
