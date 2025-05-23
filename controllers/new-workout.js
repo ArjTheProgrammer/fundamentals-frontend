@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (confirmCreate) {
         confirmCreate.onclick = function() {
             // Simulate recording the workout (e.g., send to server)
-            alert('Workout recorded!');
             document.getElementById('previewModal').style.display = 'none';
+            window.location.href = 'myworkouts.html';
         };
     }
 });
