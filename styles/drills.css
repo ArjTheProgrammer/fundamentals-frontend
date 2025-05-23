@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #1c1c1c;
+}
+
+nav {
+  padding: 20px clamp(10px, 5%, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.nav-links {
+  display: flex; /* Add display: flex */
+  justify-content: center;
+  flex-grow: 1; /* Allow it to take available space */
+  align-items: center;
+  gap: clamp(10px, 10%, 100px);
+}
+
+.nav-link:hover {
+  background-color: #1c1c1c;
+  color: #fef9f3;
+}
+
+.nav-link.active {
+  background-color: #1c1c1c;
+  color: #fef9f3;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: clamp(0.5rem, 1vw, 1rem);
+}
+
+#profile {
+  width: clamp(20px, 10%, 50px);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hero {
+  background: linear-gradient(
+    177deg,
+    #ffffff 0%,
+    #ffffff 70%,
+    #ffffff 70%,
+    #ffffff 70%,
+    #1c1c1c 71%
+  );
+  display: flex;
+  justify-content: space-between;
+  padding: 20px clamp(10px, 10%, 100px);
+}
+
+.title h1 {
+  font-family: "Bebas Neue";
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 120%;
+}
+
+.title p {
+  font-size: clamp(0.7rem, 2vw, 4rem);
+}
+
+.hero img {
+  height: clamp(200px, 30vw, 500px);
+}
+
+.skills {
+  background-color: #1c1c1c;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: clamp(20px, 10vw, 50px);
+  padding: clamp(10px, 50vw, 20px);
+  margin-bottom: 50px;
+}
+
+.skill-card {
+  background-color: #ed8732;
+  width: clamp(100px, 25vw, 350px);
+  height: auto;
+  padding: clamp(0px, 10vw, 30px) clamp(10px, 10vw, 20px);
+  border-radius: 20px;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  gap: clamp(3px, 1vw, 10px);
+}
+
+.skill-card h2 {
+  font-family: "Bebas Neue";
+  font-size: clamp(1rem, 5vw, 3rem);
+  line-height: 120%;
+}
+
+.tag-container {
+  margin: 10px 0px;
+}
+
+.tag-container span {
+  background-color: #fef9f3;
+  padding: 0px 10px;
+  border-radius: 20px;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+.skill-card p {
+  font-style: italic;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+}
