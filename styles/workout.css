@@ -6,6 +6,9 @@
 
 body {
   background-color: #fef9f3;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 nav {
@@ -54,6 +57,7 @@ nav {
 }
 
 .hero {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,11 +75,60 @@ nav {
 }
 
 .hero-text {
-  margin-left: 100px;
+  margin-left: clamp(30px, 10vw, 100px);
 }
 
 .hero h1 {
   font-family: "Bebas Neue";
   font-weight: 400;
-  font-size: 8rem;
+  font-size: clamp(4rem, 5vw + 1rem, 8rem);
+}
+
+.hero p {
+  font-size: clamp(0.7rem, 2vw + 1rem, 1rem);
+}
+
+.workouts {
+  display: flex;
+  flex: 1;
+}
+
+.workout-card {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.workout-card img {
+  aspect-ratio: 1/1;
+  width: clamp(50px, 20vw, 100px);
+}
+
+.workout-card p {
+  color: #fef9f3;
+  font-weight: 500;
+  font-size: clamp(0, 5rem, 1vw + 1.5rem, 1.5rem);
+}
+
+#ready-workout {
+  background-image: linear-gradient(
+      rgba(28, 28, 28, 0.55),
+      rgba(28, 28, 28, 0.55)
+    ),
+    url(../assets/ready-workout.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#my-workout {
+  background-image: linear-gradient(
+      rgba(28, 28, 28, 0.55),
+      rgba(28, 28, 28, 0.55)
+    ),
+    url(../assets/my-workout.jpg);
+  background-size: cover;
+  background-position: center;
 }
