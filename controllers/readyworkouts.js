@@ -1,32 +1,21 @@
+import workoutService from "../services/workouts.js";
+
 // Wait for DOM to fully load
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   // Workout data
-  const workouts = [
-    {
-      title: "SHOOTING BASICS",
-      description: "Master your shooting form with this fundamental workout",
-    },
-    {
-      title: "HANDLES PRO",
-      description: "Improve your ball handling skills with advanced drills",
-    },
-    {
-      title: "DEFENSE MASTER",
-      description: "Learn defensive positioning and quick feet movement",
-    },
-  ];
+  const readyWorkouts = await workoutService.getReadyWorkouts();
 
   // Get the container element
   const workoutsContainer = document.getElementById("workouts-container");
 
   // Generate workout cards
-  workouts.forEach((workout) => {
+  readyWorkouts.forEach((workout) => {
     const workoutCard = document.createElement("div");
     workoutCard.className = "workout-card";
 
     const title = document.createElement("h3");
     title.className = "workout-title";
-    title.textContent = workout.title;
+    title.textContent = workout.workout_name;
 
     const description = document.createElement("p");
     description.className = "workout-description";
