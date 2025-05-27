@@ -1,317 +1,225 @@
 /* Add a diagonal divider between the black and orange background */
 .divider {
-    position: fixed;
-    width: 115%;
-    height: 200px;
-    background-color: #1C1C1C;
-    top: 60%;
-    left: -10%;
-    transform: rotate(-3deg);
-    z-index: -1;
-}/* Global Styles */
+  position: fixed;
+  width: 115%;
+  height: 200px;
+  background-color: #1c1c1c;
+  top: 60%;
+  left: -10%;
+  transform: rotate(-3deg);
+  z-index: -1;
+} /* Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #1C1C1C;
-    color: #fef9f3;
-    font-family: 'Inter', sans-serif;
-    position: relative;
-    min-height: 100vh;
-}
-
-/* Create the split background for the entire page */
-body:before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90%;
-    background-color: #fef9f3;
-    z-index: -2;
-}
-
-body:after {
-    content: '';
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30%;
-    background-color: #1C1C1C;
-    z-index: -2;
-}
-
-h1, h2, h3, h4, h5, h6, .nav-link {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 1px;
-}
-
-.container {
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  background-color: #1c1c1c;
 }
 
 /* Navigation */
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    position: relative;
-    z-index: 10;
+nav {
+  padding: 20px clamp(10px, 5%, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
 }
 
 .nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #1C1C1C;
-    font-weight: 400;
-    transition: all 0.3s ease;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+  gap: clamp(10px, 10%, 100px);
 }
 
 .nav-link:hover {
-    background-color: #1C1C1C;
-    color: #fef9f3;
+  background-color: #1c1c1c;
+  color: #fef9f3;
 }
 
 .nav-link.active {
-    background-color: #1C1C1C;
-    color: #fef9f3;
-    border-radius: 20px;
-    padding: 5px 15px;
+  background-color: #1c1c1c;
+  color: #fef9f3;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: clamp(0.5rem, 1vw, 1rem);
 }
 
 .profile-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px, solid black;
-    object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  object-fit: cover;
 }
 
 /* Hero Section */
 .hero {
-    position: relative;
-    padding: 80px 40px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Create a transparent section for hero so we can see the global background */
-.hero:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1000px;
+  position: relative;
+  background: linear-gradient(
+    177deg,
+    #ffffff 0%,
+    #ffffff 70%,
+    #ffffff 70%,
+    #ffffff 70%,
+    #1c1c1c 71%
+  );
+  height: clamp(300px, 30vw, 500px);
+  display: flex;
+  justify-content: center;
+  padding: 20px clamp(10px, 10%, 100px);
 }
 
 .hero-title {
-    font-size: 11rem;
-    font-weight: 400; /* Bebas Neue looks good with normal weight */
-    line-height: 0.9;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #1C1C1C;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color: #1c1c1c;
+  z-index: 4;
+  font-size: clamp(3.5rem, 10vw, 14rem);
+  line-height: 120%;
 }
+
 .orange-text {
-    color: #FF9136;
+  color: #ff9136;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    opacity: 0.8;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    color: #1C1C1C;
+  font-size: clamp(0.7rem, 2vw, 4rem);
+  opacity: 0.8;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #1c1c1c;
 }
 
 .hero-images {
-    position: relative;
-    width: 100%;
-    height: 200px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: clamp(15vw, 20%, 180px);
+  bottom: clamp(10px, 5vw, 50px);
+  right: clamp(20px, 5vw, 100px);
+  z-index: 0;
 }
 
 .basketball-image {
-    position: absolute;
-    left: 20px;
-    bottom: -130px;
-    width: 400px;
-    height: 400px;
-    z-index: 1;
+  position: absolute;
+  left: clamp(-20px, 10vw, 10px);
+  bottom: -10px;
+  width: clamp(150px, 30vw, 400px);
+  z-index: 0;
 }
 
 .athlete-image {
-    position: absolute;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: #ff7700;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ff7700;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  max-width: 100%;
 }
 
 .athlete1 {
-    right: 250px;
-    top: -150px;
-    width: 90px;
-    height: 90px;
+  align-self: start;
+  width: clamp(40px, 10vw, 90px);
 }
 
 .athlete2 {
-    right: 150px;
-    top: -50px;
-    width: 120px;
-    height: 120px;
+  align-self: end;
+  width: clamp(50px, 10vw, 120px);
 }
 
 .athlete3 {
-    right: 290px;
-    top: 50px;
-    width: 90px;
-    height: 90px;
+  align-self: start;
+  width: clamp(40px, 10vw, 90px);
 }
 
 /* Workouts Grid */
-.workouts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    gap: 25px;
-    padding: 90px;
-    position: relative;
-    z-index: 2;
+.workouts-container {
+  background-color: #1c1c1c;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: clamp(20px, 10vw, 50px);
+  padding: clamp(10px, 50vw, 20px);
+  margin-bottom: 50px;
 }
 
 .workout-card {
-    background-color: #FF9136;
-    color: #000;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  background-color: #ed8732;
+  width: clamp(300px, 40vw, 390px);
+  height: auto;
+  padding: clamp(0px, 10vw, 30px) clamp(10px, 10vw, 20px);
+  border-radius: 20px;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  gap: clamp(3px, 1vw, 10px);
 }
 
 .workout-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .workout-title {
-    font-size: 3.5rem;
-    font-weight: 400; /* Bebas Neue normal weight */
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.card-link:hover .workout-card {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  font-size: clamp(1rem, 5vw, 3rem);
+  line-height: 120%;
 }
 
 .tags {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .tag {
-    background-color: #fef9f3;
-    color: #1C1C1C;
-    padding: 3px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
+  background-color: #fef9f3;
+  color: #1c1c1c;
+  padding: 3px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
 }
 
 .workout-description {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: #1C1C1C;
-    font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+.hero-content {
+  z-index: 2;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 992px) {
-    .workouts-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .hero-title {
-        font-size: 5.5rem;
-    }
+  .workouts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media screen and (max-width: 968px) {
-    .main-nav {
-        padding: 15px 20px;
-    }
-    
-    .nav-links {
-        gap: 15px;
-    }
-    
-    .hero {
-        padding: 50px 20px;
-    }
-    
-    .hero-title {
-        font-size: 4rem;
-    }
-    
-    .basketball-image {
-        width: 150px;
-        height: 150px;
-        left: 5px;
-        bottom: -50px;
-    }
-    
-    .athlete-image {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .workouts-grid {
-        padding: 30px 20px;
-        grid-template-columns: 1fr;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .hero-title {
-        font-size: 3rem;
-    }
+@media screen and (max-width: 768px) {
+  .workouts-grid {
+    padding: 30px 20px;
+    grid-template-columns: 1fr;
+  }
 }

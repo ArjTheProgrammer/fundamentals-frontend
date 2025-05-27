@@ -1,86 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>READY Workouts - Basketball Training</title>
-    <link rel="stylesheet" href="/styles/readyworkouts.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentals</title>
+    <link rel="stylesheet" href="/styles/readyworkouts.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/controllers/readyworkouts.js"></script>
+  </head>
+  <body>
     <div class="container">
-        <!-- Diagonal divider between black and orange backgrounds -->
-        <div class="divider"></div>
-    <div class="container">
-        <!-- Navigation -->
-        <nav class="main-nav">
-                <div class="nav-logo"> </div>
-            <div class="nav-links">
-                <a href="#" class="nav-link">HOME</a>
-                <a href="#" class="nav-link active">WORKOUTS</a>
-                <a href="#" class="nav-link">DRILLS</a>
-            </div>
-            <div class="profile">
-                <img src="/assets/player.png" alt="Profile" class="profile-image">
-            </div>
-        </nav>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title"><span class="orange-text">READY</span> WORKOUTS</h1>
-                <p class="hero-subtitle">Need a jumpstart? <br>
-                These workouts are ready when you are.</p>
-            </div>
-            <div class="hero-images">
-                <img src="/assets/ball.png" alt="Basketball" class="basketball-image">
-                <img src="/assets/foot-stretch.png" alt="Athlete" class="athlete-image athlete1">
-                <img src="/assets/smile-stretch.png" alt="Athlete" class="athlete-image athlete2">
-                <img src="/assets/stretching.png" alt="Athlete" class="athlete-image athlete3">
-            </div>
-        </section>
-
-        <!-- Workouts Grid -->
-<section class="workouts-grid">
-    <!-- Workout Card 1 -->
-    <a href="handles-vision.html" class="card-link">
-        <div class="workout-card">
-            <h3 class="workout-title">HANDLES & VISION</h3>
-            <div class="tags">
-                <span class="tag dribbling">Dribbling</span>
-                <span class="tag shooting">Shooting</span>
-            </div>
-            <p class="workout-description">short description ng workout na to lorem ipsum</p>
+      <!-- Navigation -->
+      <nav class="main-nav">
+        <div class="nav-logo"></div>
+        <div class="nav-links">
+          <a href="./homepage.html" class="nav-link">HOME</a>
+          <a href="./workout.html" class="nav-link active">WORKOUTS</a>
+          <a href="./drills.html" class="nav-link">DRILLS</a>
         </div>
-    </a>
+      </nav>
 
-    <!-- Workout Card 2 -->
-    <a href="shooters-flow.html" class="card-link">
-        <div class="workout-card">
-            <h3 class="workout-title">SHOOTER'S FLOW</h3>
-            <div class="tags">
-                <span class="tag dribbling">Dribbling</span>
-                <span class="tag shooting">Shooting</span>
-            </div>
-            <p class="workout-description">short description ng workout na to lorem ipsum</p>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="orange-text">READY</span> WORKOUTS
+          </h1>
+          <p class="hero-subtitle">
+            Pre-designed workouts to improve your basketball skills.
+          </p>
         </div>
-    </a>
-
-    <!-- Workout Card 3 -->
-    <a href="game-ready-grind.html" class="card-link">
-        <div class="workout-card">
-            <h3 class="workout-title">GAME-READY GRIND</h3>
-            <div class="tags">
-                <span class="tag dribbling">Dribbling</span>
-                <span class="tag shooting">Shooting</span>
-            </div>
-            <p class="workout-description">short description ng workout na to lorem ipsum</p>
+        <img src="/assets/ball.png" alt="Basketball" class="basketball-image" />
+        <div class="hero-images">
+          <img
+            src="/assets/stretching.png"
+            alt="Athlete"
+            class="athlete-image athlete1"
+          />
+          <img
+            src="/assets/foot-stretch.png"
+            alt="Athlete"
+            class="athlete-image athlete2"
+          />
+          <img
+            src="/assets/smile-stretch.png"
+            alt="Athlete"
+            class="athlete-image athlete3"
+          />
         </div>
-    </a>
-</section>
+      </section>
 
-    <script src="/controllers/readyworkouts.js"></script>
-</body>
+      <!-- Workouts Grid -->
+      <section class="workouts-container">
+        <!-- Workout Cards -->
+        <div class="workout-card">
+          <h3 class="workout-title">SHOOTING BASICS</h3>
+          <p class="workout-description">
+            Master your shooting form with this fundamental workout
+          </p>
+        </div>
+
+        <div class="workout-card">
+          <h3 class="workout-title">HANDLES PRO</h3>
+          <p class="workout-description">
+            Improve your ball handling skills with advanced drills
+          </p>
+        </div>
+
+        <div class="workout-card">
+          <h3 class="workout-title">DEFENSE MASTER</h3>
+          <p class="workout-description">
+            Learn defensive positioning and quick feet movement
+          </p>
+        </div>
+
+        <div class="workout-card">
+          <h3 class="workout-title">GAME CONDITIONING</h3>
+          <p class="workout-description">
+            Build stamina and endurance for game situations
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
