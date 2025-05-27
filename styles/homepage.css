@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100vh;
   overflow: hidden;
 }
@@ -18,7 +19,7 @@ main {
 /* Left panel styling */
 .left-panel {
   width: 40%;
-  background: linear-gradient(to bottom, #FFC89A, #ED8732);
+  background: linear-gradient(to bottom, #ffc89a, #ed8732);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -87,11 +88,11 @@ main {
 .nav-links {
   display: flex;
   gap: clamp(15px, 3vw, 30px);
-  margin-left: 190px;
+  margin-left: 60px;
 }
 .nav-link {
   text-decoration: none;
-  color: #1C1C1C;
+  color: #1c1c1c;
   font-weight: 400;
   transition: all 0.3s ease;
   padding: 5px 15px;
@@ -100,12 +101,12 @@ main {
 }
 
 .nav-link:hover {
-  background-color: #1C1C1C;
+  background-color: #1c1c1c;
   color: #fef9f3;
 }
 
 .nav-link.active {
-  background-color: #1C1C1C;
+  background-color: #1c1c1c;
   color: #fef9f3;
   border-radius: 20px;
   padding: 5px 15px;
@@ -141,14 +142,14 @@ main {
 }
 
 .menu {
-  background-color: #1C1C1C;
+  background-color: #1c1c1c;
   border-radius: 10px;
   padding: 10px;
 }
 
 .menu-link {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: white;
   text-decoration: none;
@@ -165,9 +166,10 @@ main {
 
 /* Top content area */
 .top {
-  height: 40%;
-  background-color: #FEF9F3;
+  height: 50%;
+  background-color: #fef9f3;
   padding: clamp(15px, 3vw, 40px);
+  padding-bottom: 0;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -204,8 +206,8 @@ main {
 
 /* Bottom content area */
 .bottom {
-  height: 60%;
-  background-color: #1C1C1C;
+  height: 50%;
+  background-color: #1c1c1c;
   padding: clamp(20px, 4vw, 40px);
   display: flex;
   width: 100%;
@@ -231,7 +233,7 @@ main {
 }
 
 .skill-value {
-  color: #F5A142;
+  color: #f5a142;
   font-size: clamp(1.2rem, 3vw, 2rem);
   font-weight: 700;
   width: clamp(40px, 8vw, 60px);
@@ -268,13 +270,18 @@ main {
   height: clamp(150px, 25vw, 250px);
 }
 
+@media (max-width: 1300px) {
+  .nav-links {
+    margin-left: 120px;
+  }
+}
 
 /* Mobile responsive layout */
 @media (max-width: 800px) {
   body {
     overflow: auto;
   }
-  
+
   main {
     flex-direction: column;
     height: auto;
@@ -283,67 +290,79 @@ main {
 
   .left-panel {
     width: 100%;
-    background: linear-gradient(to bottom, #FEF9F3 0%, #FEF9F3 25%, #FFC89A 25%, #ED8732 100%);
+    background: linear-gradient(
+      to bottom,
+      #fef9f3 0%,
+      #fef9f3 25%,
+      #ffc89a 25%,
+      #ed8732 100%
+    );
     min-height: 70vh;
   }
-  
+
   .right-panel {
     width: 100%;
     height: auto;
   }
-  
+
   .header-left {
     height: auto;
     padding: clamp(15px, 4vw, 25px);
-    background-color: #FEF9F3;
+    background-color: #fef9f3;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
+
   /* .logo {
     width: clamp(80px, 20vw, 120px);
   } */
-  
+
   /* Mobile navigation */
   .mobile-nav {
     display: flex;
     gap: clamp(15px, 4vw, 25px);
     align-items: center;
   }
-  
+
   .nav-links {
     gap: clamp(10px, 3vw, 20px);
     margin-left: 0px;
   }
-  
+
   .nav-link {
     font-size: clamp(0.7rem, 2.5vw, 0.9rem);
     padding: clamp(3px, 1vw, 8px) clamp(8px, 2vw, 12px);
   }
-  
+
   .user-profile {
     width: clamp(30px, 8vw, 40px);
     height: clamp(30px, 8vw, 40px);
   }
-  
+
   .header-right {
     position: fixed;
     top: 0;
     width: 100vw;
     justify-self: center;
-    background: #FEF9F3;
+    background: #fef9f3;
     /* display: none; */
   }
-  
+
   .left-panel {
     width: 100%;
     margin-top: 60px;
-    background: linear-gradient(to bottom, #FEF9F3 0%, #FEF9F3 25%, #FFC89A 25%, #ED8732 100%);
+    background: linear-gradient(
+      to bottom,
+      #fef9f3 0%,
+      #fef9f3 25%,
+      #ffc89a 25%,
+      #ed8732 100%
+    );
     min-height: 25vh;
     position: relative;
   }
-  
+
   .left-image {
     justify-content: center;
     align-items: center;
@@ -352,7 +371,7 @@ main {
     padding-bottom: 0px;
     position: relative;
   }
-  
+
   .left-image img {
     width: 100%;
     max-width: 400px;
@@ -361,11 +380,11 @@ main {
     object-fit: contain;
     margin-top: clamp(60px, 12vw, 100px);
   }
-  
+
   .fundamentals-badge {
     display: none;
   }
-  
+
   /* Position top section over the left panel */
   .top {
     position: absolute;
@@ -377,65 +396,65 @@ main {
     padding: clamp(15px, 4vw, 25px);
     z-index: 10;
   }
-  
+
   .welcome-user {
     width: 100%;
   }
-  
+
   .welcome-user h1 {
     font-size: clamp(2rem, 12vw, 3.5rem);
     margin-bottom: clamp(2px, 2vw, 15px);
     font-weight: 700;
-    color: #1C1C1C;
+    color: #1c1c1c;
     text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
   }
-  
+
   .welcome-user p {
     font-size: clamp(0.9rem, 3vw, 1.1rem);
     color: #333;
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
   }
-  
+
   .welcome-image {
     display: none;
   }
-  
+
   .bottom {
     height: clamp(400px, 60vh, 700px);
     padding: clamp(20px, 5vw, 30px);
     flex-direction: column;
     gap: clamp(15px, 4vw, 25px);
   }
-  
+
   .user-progress {
     height: clamp(200px, 25vh, 300px);
     width: 100%;
   }
-  
+
   .user-progress h2 {
     font-size: clamp(2rem, 6vw, 3rem);
     margin-bottom: clamp(15px, 4vw, 25px);
   }
-  
+
   .skill-row {
     margin-bottom: clamp(10px, 4vw, 16px);
   }
-  
+
   .skill-value {
     font-size: clamp(1rem, 4vw, 1.5rem);
     width: clamp(30px, 8vw, 50px);
   }
-  
+
   .skill-name {
     font-size: clamp(0.5rem, 3.5vw, 1.5rem);
   }
-  
+
   .skill-name {
     margin-top: 5px;
     font-size: clamp (1rem, 3vh, 2rem);
     width: 50%;
   }
-  .skill-line{
+  .skill-line {
     width: 50%;
   }
 
@@ -443,7 +462,7 @@ main {
     width: 100%;
     margin-top: clamp(15px, 4vw, 25px);
   }
-  
+
   .progress-chart svg {
     width: clamp(120px, 35vw, 200px);
     height: clamp(120px, 35vw, 200px);
@@ -454,47 +473,53 @@ main {
 @media (max-width: 500px) {
   .left-panel {
     margin-top: 50px;
-    background: linear-gradient(to bottom, #FEF9F3 0%, #FEF9F3 25%, #FFC89A 25%, #ED8732 100%);
+    background: linear-gradient(
+      to bottom,
+      #fef9f3 0%,
+      #fef9f3 25%,
+      #ffc89a 25%,
+      #ed8732 100%
+    );
   }
-  
+
   .header-left {
     padding: 15px;
   }
-  
+
   .nav-links {
     gap: 10px;
   }
-  
+
   .nav-link {
     font-size: 0.7rem;
     padding: 4px 8px;
   }
-  
+
   .welcome-user h1 {
     font-size: 2.2rem;
   }
-  
+
   .welcome-user p {
     font-size: 0.9rem;
   }
-  
+
   .user-progress h2 {
     font-size: 2rem;
     margin-bottom: 29px;
   }
-  
+
   .skill-value {
     font-size: 1rem;
     width: 35px;
   }
-  
+
   .skill-name {
     margin-top: 5px;
     font-size: clamp (0.8rem, 3vh, 2.5rem);
     width: 50%;
   }
 
-  .skill-line{
+  .skill-line {
     width: 40%;
   }
 
@@ -509,11 +534,11 @@ main {
   .welcome-user h1 {
     font-size: 2rem;
   }
-  
+
   .user-progress h2 {
     font-size: 1.3rem;
   }
-  
+
   .nav-link {
     font-size: 0.6rem;
     padding: 3px 6px;
