@@ -312,8 +312,7 @@ button.cancel {
   margin: 8% auto;
   padding: 24px 32px 32px 32px;
   border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
+  width: clamp(150px, 70vw  , 400px);
   box-shadow: 0 4px 24px rgba(0,0,0,0.2);
   position: relative;
   font-family: 'Inter', sans-serif;
@@ -351,7 +350,7 @@ button.cancel {
   font-family: 'Inter', sans-serif;
   transition: background 0.2s;
   margin-top: 20px;
-  margin-left: 290px;
+  margin-left: clamp(100px, 40vw, 290px);
 }
 #confirmCreate:hover {
   background: #db8844;
