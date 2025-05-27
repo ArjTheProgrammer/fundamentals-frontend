@@ -5,10 +5,9 @@
 }
 
 body {
-  color: #fef9f3;
   font-family: "Inter", sans-serif;
   position: relative;
-  min-height: 100vh;
+  background-color: #1c1c1c;
 }
 
 /* Create the split background for the entire page */
@@ -34,13 +33,6 @@ body {
   transform: rotate(-3deg);
   z-index: -1;
 } */
-
-.container {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-  position: relative;
-}
 
 /* Navigation */
 nav {
@@ -183,23 +175,27 @@ nav {
 }
 
 /* Workouts Grid */
-.workouts-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  gap: 25px;
-  padding: 90px;
-  position: relative;
-  z-index: 2;
+.workouts-container {
+  background-color: #1c1c1c;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: clamp(20px, 10vw, 50px);
+  padding: clamp(10px, 50vw, 20px);
+  margin-bottom: 50px;
 }
 
 .workout-card {
-  background-color: #ff9136;
-  color: #000;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  position: relative;
+  background-color: #ed8732;
+  width: clamp(300px, 40vw, 390px);
+  height: auto;
+  padding: clamp(0px, 10vw, 30px) clamp(10px, 10vw, 20px);
+  border-radius: 20px;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  gap: clamp(3px, 1vw, 10px);
 }
 
 .workout-card:hover {
@@ -207,10 +203,10 @@ nav {
 }
 
 .workout-title {
-  font-size: 3.5rem;
-  font-weight: 400; /* Bebas Neue normal weight */
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  font-size: clamp(1rem, 5vw, 3rem);
+  line-height: 120%;
 }
 
 .tags {
@@ -230,23 +226,16 @@ nav {
 }
 
 .workout-description {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #1c1c1c;
-  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-size: clamp(0.7rem, 1vw, 1rem);
 }
 
 .edit-icon {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
+  align-self: end;
   color: #1c1c1c;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
 }

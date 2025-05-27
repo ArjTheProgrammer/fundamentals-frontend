@@ -99,6 +99,7 @@ nav {
 
 .skill-card h2 {
   font-family: "Bebas Neue";
+  font-weight: 400;
   font-size: clamp(1rem, 5vw, 3rem);
   line-height: 120%;
 }
