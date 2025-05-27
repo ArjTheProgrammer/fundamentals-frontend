@@ -46,14 +46,6 @@ nav {
   font-size: clamp(0.5rem, 1vw, 1rem);
 }
 
-#profile {
-  width: clamp(20px, 10%, 50px);
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
-}
-
 .hero {
   background: linear-gradient(
     177deg,

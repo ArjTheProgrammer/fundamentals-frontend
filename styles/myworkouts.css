@@ -5,7 +5,6 @@
 }
 
 body {
-  background-color: #1c1c1c;
   color: #fef9f3;
   font-family: "Inter", sans-serif;
   position: relative;
@@ -13,7 +12,7 @@ body {
 }
 
 /* Create the split background for the entire page */
-body:before {
+/* body:before {
   content: "";
   position: fixed;
   top: 0;
@@ -22,21 +21,10 @@ body:before {
   height: 90%;
   background-color: #fef9f3;
   z-index: -2;
-}
-
-body:after {
-  content: "";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30%;
-  background-color: #1c1c1c;
-  z-index: -2;
-}
+} */
 
 /* Add a diagonal divider between the black and orange background */
-.divider {
+/* .divider {
   position: fixed;
   width: 115%;
   height: 200px;
@@ -45,7 +33,7 @@ body:after {
   left: -10%;
   transform: rotate(-3deg);
   z-index: -1;
-}
+} */
 
 .container {
   width: 100%;
@@ -104,19 +92,22 @@ nav {
 /* Hero Section */
 .hero {
   position: relative;
-  padding: 80px 40px;
-  min-height: 400px;
+  background: linear-gradient(
+    177deg,
+    #ffffff 0%,
+    #ffffff 70%,
+    #ffffff 70%,
+    #ffffff 70%,
+    #1c1c1c 71%
+  );
+  height: clamp(300px, 30vw, 500px);
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  text-align: center;
-  margin-bottom: 20px;
+  padding: 20px clamp(10px, 10%, 100px);
 }
 
 /* Create a transparent section for hero so we can see the global background */
-.hero:before {
+/* .hero:before {
   content: "";
   position: absolute;
   top: 0;
@@ -124,23 +115,16 @@ nav {
   width: 100%;
   height: 100%;
   z-index: -1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1000px;
-}
+} */
 
 .hero-title {
-  font-size: 12rem;
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400; /* Bebas Neue looks good with normal weight */
-  line-height: 0.9;
-  margin-bottom: 20px;
   text-align: center;
   color: #1c1c1c;
+  z-index: 4;
+  font-size: clamp(4rem, 10vw, 14rem);
+  line-height: 120%;
 }
 
 .orange-text {
@@ -148,7 +132,7 @@ nav {
 }
 
 .hero-subtitle {
-  font-size: 1.7rem;
+  font-size: clamp(0.7rem, 2vw, 4rem);
   opacity: 0.8;
   text-align: center;
   font-family: "Inter", sans-serif;
@@ -157,46 +141,45 @@ nav {
 }
 
 .hero-images {
-  position: relative;
-  width: 100%;
-  height: 200px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: clamp(15vw, 20%, 180px);
+  bottom: clamp(10px, 5vw, 50px);
+  right: clamp(20px, 5vw, 100px);
+  z-index: 0;
 }
 
 .basketball-image {
   position: absolute;
-  left: 20px;
-  bottom: -100px;
-  width: 400px;
-  height: 400px;
-  z-index: 1;
+  left: clamp(-20px, 10vw, 10px);
+  bottom: -10px;
+  width: clamp(150px, 30vw, 400px);
+  z-index: 0;
 }
 
 .athlete-image {
-  position: absolute;
   border-radius: 50%;
   object-fit: cover;
   background-color: #ff7700;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  max-width: 100%;
 }
 
 .athlete1 {
-  right: 250px;
-  top: -150px;
-  width: 90px;
-  height: 90px;
+  align-self: start;
+  width: clamp(40px, 10vw, 90px);
 }
 
 .athlete2 {
-  right: 150px;
-  top: -50px;
-  width: 120px;
-  height: 120px;
+  align-self: end;
+  width: clamp(50px, 10vw, 120px);
 }
 
 .athlete3 {
-  right: 290px;
-  top: 50px;
-  width: 90px;
-  height: 90px;
+  align-self: start;
+  width: clamp(40px, 10vw, 90px);
 }
 
 /* Workouts Grid */
@@ -268,6 +251,10 @@ nav {
   transition: all 0.3s ease;
 }
 
+.hero-content {
+  z-index: 2;
+}
+
 .edit-icon:hover {
   transform: scale(1.1);
 }
@@ -304,10 +291,6 @@ nav {
   .workouts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .hero-title {
-    font-size: 5.5rem;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -315,31 +298,8 @@ nav {
     padding: 50px 20px;
   }
 
-  .hero-title {
-    font-size: 4rem;
-  }
-
-  .basketball-image {
-    width: 150px;
-    height: 150px;
-    left: 5px;
-    bottom: -50px;
-  }
-
-  .athlete-image {
-    width: 60px;
-    height: 60px;
-    right: 10px;
-  }
-
   .workouts-grid {
     padding: 30px 20px;
     grid-template-columns: 1fr;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .hero-title {
-    font-size: 3rem;
   }
 }
