@@ -9,9 +9,22 @@ const getReadyWorkouts = async () => {
     throw new Error("User not found in localStorage or missing user_id");
   }
 
-  const response = await axios.get(`${baseUrl}/${user.user_id}`);
+  const response = await axios.get(`${baseUrl}/ready/${user.user_id}`);
   console.log(response);
   return response.data;
 };
 
-export default { getReadyWorkouts };
+const getOwnWorkouts = async () => {
+  // Parse the user from localStorage
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user || !user.user_id) {
+    throw new Error("User not found in localStorage or missing user_id");
+  }
+
+  const response = await axios.get(`${baseUrl}/own/${user.user_id}`);
+  console.log(response);
+  return response.data;
+};
+
+export default { getReadyWorkouts, getOwnWorkouts };

@@ -1,24 +1,8 @@
+import workoutService from "../services/workouts.js";
+
 // Wait for DOM to fully load
-document.addEventListener("DOMContentLoaded", function () {
-  // Sample workout data (replace with API call in production)
-  const workouts = [
-    {
-      id: 1,
-      title: "STRENGTH TRAINING",
-      description: "Build muscle with this high-intensity workout routine",
-    },
-    {
-      id: 2,
-      title: "AGILITY DRILLS",
-      description:
-        "Improve your footwork and reaction time with these exercises",
-    },
-    {
-      id: 3,
-      title: "CARDIO BURST",
-      description: "Enhance your stamina with this interval training workout",
-    },
-  ];
+document.addEventListener("DOMContentLoaded", async function () {
+  const ownWorkouts = await workoutService.getOwnWorkouts();
 
   // Get the container where workout cards will be added
   const workoutsContainer = document.querySelector(".workouts-container");
@@ -27,17 +11,55 @@ document.addEventListener("DOMContentLoaded", function () {
   workoutsContainer.innerHTML = "";
 
   // Create and add workout cards dynamically
-  workouts.forEach((workout) => {
+  ownWorkouts.forEach((workout) => {
     const workoutCard = document.createElement("div");
     workoutCard.className = "workout-card";
+    workoutCard.dataset.id = workout.id;
 
-    workoutCard.innerHTML = `
-            <h3 class="workout-title">${workout.title}</h3>
-            <p class="workout-description">${workout.description}</p>
-            <a href="editworkout.html" class="edit-icon">
-                <img src="https://img.icons8.com/?size=25&id=EpwgBizRWig8&format=png&color=000000" alt="Edit">
-            </a>
-        `;
+    const title = document.createElement("h3");
+    title.className = "workout-title";
+    title.textContent = workout.workout_name;
+
+    const description = document.createElement("p");
+    description.className = "workout-description";
+    description.textContent = workout.description;
+
+    const editLink = document.createElement("a");
+    editLink.href = "editworkout.html";
+    editLink.className = "edit-icon";
+
+    const editIcon = document.createElement("img");
+    editIcon.src =
+      "https://img.icons8.com/?size=25&id=EpwgBizRWig8&format=png&color=000000";
+    editIcon.alt = "Edit";
+
+    editLink.appendChild(editIcon);
+
+    workoutCard.appendChild(title);
+    workoutCard.appendChild(description);
+    workoutCard.appendChild(editLink);
+
+    // Add click event listener
+    workoutCard.addEventListener("click", function (event) {
+      // Prevent triggering click when edit icon is clicked
+      if (event.target === editIcon || event.target === editLink) {
+        return;
+      }
+
+      const workoutId = this.dataset.id;
+      console.log(
+        "Workout clicked:",
+        this.querySelector(".workout-title").textContent,
+        "ID:",
+        workoutId
+      );
+      this.style.transform = "scale(0.98)";
+      setTimeout(() => {
+        this.style.transform = "translateY(-5px)";
+      }, 100);
+      // You can redirect to a detailed view here if needed
+      // window.location.href = `workout-detail.html?id=${workoutId}`;
+    });
 
     workoutsContainer.appendChild(workoutCard);
   });
@@ -54,22 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
     card.addEventListener("mouseleave", function () {
       this.style.transform = "translateY(0)";
       this.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.1)";
-    });
-
-    card.addEventListener("click", function () {
-      const workoutId = this.dataset.id;
-      console.log(
-        "Workout clicked:",
-        this.querySelector(".workout-title").textContent,
-        "ID:",
-        workoutId
-      );
-      this.style.transform = "scale(0.98)";
-      setTimeout(() => {
-        this.style.transform = "translateY(-5px)";
-      }, 100);
-      // You can redirect to a detailed view here if needed
-      // window.location.href = `workout-detail.html?id=${workoutId}`;
     });
   });
 
