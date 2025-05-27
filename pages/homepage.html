@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
-  <link rel="stylesheet" href="/styles/homepage.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
-  <main>
-        <div class="header-right">
-             <img src="/assets/fundalogo.png" class="logo" alt="Fundamentals Logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/styles/homepage.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="header-right">
+        <img src="/assets/fundalogo.png" class="logo" alt="Fundamentals Logo" />
         <div class="nav-links">
-                <a href="./homepage.html" class="nav-link active">HOME</a>
-                <a href="./workout.html" class="nav-link">WORKOUTS</a>
-                <a href="./drills.html" class="nav-link">DRILLS</a>
-            </div>
+          <a href="./homepage.html" class="nav-link active">HOME</a>
+          <a href="./workout.html" class="nav-link">WORKOUTS</a>
+          <a href="./drills.html" class="nav-link">DRILLS</a>
+        </div>
         <div class="user-profile">
-          <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="User Profile" onclick="toggleMenu()">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/456/456212.png"
+            alt="User Profile"
+            onclick="toggleMenu()"
+          />
         </div>
         <div class="menu-container" id="menuOpen">
           <div class="menu">
@@ -30,14 +37,14 @@
           </div>
         </div>
       </div>
-    <section class="left-panel">
-      <div class="left-image">
-        <img src="/assets/freethrow-shadow.png" alt="Basketball Player">
-      </div>
-    </section>
+      <section class="left-panel">
+        <div class="left-image">
+          <img src="/assets/freethrow-shadow.png" alt="Basketball Player" />
+        </div>
+      </section>
 
-    <section class="right-panel">
-      <!-- <div class="header-right">
+      <section class="right-panel">
+        <!-- <div class="header-right">
         <img src="/assets/fundalogo.png" class="logo" alt="Fundamentals Logo">
         <div class="nav-links">
                 <a href="#" class="nav-link active">HOME</a>
@@ -65,52 +72,52 @@
         </div> 
       </div> -->
 
-      <div class="top">
-        <div class="welcome-user">
-          <h1>HI, USER!</h1>
-          <p>Ready to level up your game today?</p>
-        </div>
+        <div class="top">
+          <div class="welcome-user">
+            <h1>Hi! USER!</h1>
+            <p>Ready to level up your game today?</p>
+          </div>
 
-        <div class="welcome-image">
-          <img src="/assets/ballwithhand.png" alt="Basketball on finger">
-        </div>
-      </div>
-
-      <div class="bottom">
-        <div class="user-progress">
-          <h2>Your Progress</h2>
-          <div class="skill-row">
-            <span class="skill-value">40</span>
-            <div class="skill-line-container">
-              <span class="skill-name">Dribbling</span>
-              <div class="skill-line"></div>
-            </div>
-          </div>
-          <div class="skill-row">
-            <span class="skill-value">24</span>
-            <div class="skill-line-container">
-              <span class="skill-name">Shooting</span>
-              <div class="skill-line"></div>
-            </div>
-          </div>
-          <div class="skill-row">
-            <span class="skill-value">20</span>
-            <div class="skill-line-container">
-              <span class="skill-name">Passing</span>
-              <div class="skill-line"></div>
-            </div>
-          </div>
-          <div class="skill-row">
-            <span class="skill-value">16</span>
-            <div class="skill-line-container">
-              <span class="skill-name">Defense</span>
-              <div class="skill-line"></div>
-            </div>
+          <div class="welcome-image">
+            <img src="/assets/ballwithhand.png" alt="Basketball on finger" />
           </div>
         </div>
 
-    </section>
-  </main>
-<script src="/controllers/homepage.js"></script>
-</body>
+        <div class="bottom">
+          <div class="user-progress">
+            <h2>Your Progress</h2>
+            <div class="skill-row">
+              <span class="skill-value">40</span>
+              <div class="skill-line-container">
+                <span class="skill-name">Dribbling</span>
+                <div class="skill-line"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-value">24</span>
+              <div class="skill-line-container">
+                <span class="skill-name">Shooting</span>
+                <div class="skill-line"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-value">20</span>
+              <div class="skill-line-container">
+                <span class="skill-name">Passing</span>
+                <div class="skill-line"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-value">16</span>
+              <div class="skill-line-container">
+                <span class="skill-name">Defense</span>
+                <div class="skill-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/controllers/homepage.js"></script>
+  </body>
 </html>

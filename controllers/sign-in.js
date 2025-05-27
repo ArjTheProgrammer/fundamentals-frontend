@@ -26,7 +26,7 @@ document.querySelector(".signin-form").addEventListener("submit", function (e) {
         // User found
         console.log("User authenticated successfully");
         console.log(JSON.stringify(validUser[0]));
-        sessionStorage.setItem("user", validUser[0]);
+        localStorage.setItem("user", JSON.stringify(validUser[0]));
         window.location.href = "homepage.html";
       } else {
         // User not found
