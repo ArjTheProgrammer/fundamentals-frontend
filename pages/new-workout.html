@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Workout</title>
     <link rel="stylesheet" href="/styles/new-workout.css" />
-    <script src="/controllers/new-workout.js"></script>
+    <script type="module" src="/controllers/new-workout.js" defer></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -32,6 +33,16 @@
             type="text"
             id="workoutName"
             placeholder="Enter workout name"
+          />
+        </div>
+        <div class="workout-description">
+          <label for="workoutDescription">
+            <p>Description</p>
+          </label>
+          <input
+            type="text"
+            id="workoutDescription"
+            placeholder="Enter Description"
           />
         </div>
       </div>
@@ -79,7 +90,7 @@
               </div>
             </label>
             <label class="drill">
-              <input type="checkbox" /> 
+              <input type="checkbox" />
               <div>
                 <strong>Pound + Change Drill</strong>
                 <input

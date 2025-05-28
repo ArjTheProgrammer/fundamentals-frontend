@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -11,13 +11,13 @@ body {
   padding: 2rem;
   background: linear-gradient(
     110deg,
-    #FFFBF7 0%,
-    #FFFBF7 50%,
-    #FFFBF7 50%,
+    #fffbf7 0%,
+    #fffbf7 50%,
+    #fffbf7 50%,
     #ed8732 50%,
     #ed8732 80%,
-    #FFFBF7 80%,
-    #FFFBF7 100%
+    #fffbf7 80%,
+    #fffbf7 100%
   );
   position: relative;
   display: flex;
@@ -36,36 +36,35 @@ body {
   z-index: 0;
 }
 
-.workoutName-container{
-    flex-direction: column;
-    width: clamp(200px, 800px, 70vw);
-    margin: 0;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    
+.workoutName-container {
+  flex-direction: column;
+  width: clamp(200px, 800px, 70vw);
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
-.newWorkout{
+.newWorkout {
   width: 100%;
   display: flex;
 }
 
 .newWorkout p {
   font-size: clamp(50px, 128px, 10vw);
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   height: 100px;
   margin: 0;
 }
 
-.workout-name{
+.workout-name {
   display: flex;
   max-width: 100%;
   flex-direction: column;
   margin-top: 100px;
 }
 
-.workout-name p{
+.workout-name p {
   font-size: 1.2rem;
 }
 
@@ -79,7 +78,7 @@ input[type="text"] {
 }
 
 .create-workout-container {
-  display: flex;  
+  display: flex;
   z-index: 1;
   display: flex;
   margin-bottom: 20px;
@@ -93,9 +92,9 @@ input[type="text"] {
   padding: 1rem;
   background: #f5f5f5;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   width: clamp(200px, 815px, 72vw);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .categories label {
@@ -130,11 +129,11 @@ input[type="text"] {
 }
 
 .categories input[type="radio"]:hover {
-  border-color: #ED8732;
+  border-color: #ed8732;
 }
 
 .categories input[type="radio"]:checked {
-  border-color: #ED8732;
+  border-color: #ed8732;
   border-width: 2px;
 }
 
@@ -143,7 +142,7 @@ input[type="text"] {
   position: absolute;
   width: 10px;
   height: 10px;
-  background-color: #ED8732;
+  background-color: #ed8732;
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -152,7 +151,7 @@ input[type="text"] {
 }
 
 .categories input[type="radio"]:checked + p {
-  color: #ED8732;
+  color: #ed8732;
   font-weight: 600;
 }
 
@@ -164,8 +163,8 @@ input[type="text"] {
   border-radius: 10px;
   margin-bottom: 2rem;
   width: clamp(200px, 800px, 70vw);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  font-family: 'Inter', sans-serif;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", sans-serif;
   flex-wrap: wrap;
 }
 
@@ -195,7 +194,7 @@ input[type="text"] {
 
 .drill input[type="text"]:focus {
   outline: none;
-  border-color: #ED8732;
+  border-color: #ed8732;
   box-shadow: 0 0 0 2px rgba(237, 135, 50, 0.2);
 }
 
@@ -215,12 +214,12 @@ input[type="text"] {
 }
 
 .drill input[type="checkbox"]:hover {
-  border-color: #ED8732;
+  border-color: #ed8732;
 }
 
 .drill input[type="checkbox"]:checked {
-  background-color: #ED8732;
-  border-color: #ED8732;
+  background-color: #ed8732;
+  border-color: #ed8732;
 }
 
 .drill input[type="checkbox"]:checked::after {
@@ -266,13 +265,13 @@ input[type="text"] {
   gap: 15px;
 }
 
-.button p{
+.button p {
   font-size: 1.2rem;
   margin: 0;
   font-weight: 500;
 }
 
-button{
+button {
   padding: 0px 40px;
   height: 35px;
   border-radius: 25pc;
@@ -283,46 +282,47 @@ button:hover {
   opacity: 0.9;
 }
 
-button.create{
+button.create {
   background: #1c1c1c;
-  color: #FEF9F3;
+  color: #fef9f3;
 }
 button.cancel {
   background: #1c1c1c;
-  color: #FEF9F3;
+  color: #fef9f3;
 }
 
 .modal {
   /* display: none; */
-  position: fixed; 
-  z-index: 1; 
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgba(0,0,0,0.4); 
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal.show {
-  display: block; 
+  display: block;
 }
 .modal-content {
-  background-color: #FEF9F3;
+  background-color: #fef9f3;
   margin: 8% auto;
   padding: 24px 32px 32px 32px;
   border-radius: 12px;
-  width: clamp(150px, 70vw  , 400px);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  width: clamp(150px, 70vw, 400px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
   position: relative;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .modal-content p {
   margin: 0;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   letter-spacing: 1px;
   font-size: 4rem;
 }
+
 .modal-content .close {
   position: absolute;
   right: 20px;
@@ -338,6 +338,11 @@ button.cancel {
   margin: 18px 0 24px 0;
   font-size: 1rem;
 }
+
+#previewContent ul {
+  overflow-y: auto;
+}
+
 #confirmCreate {
   background: #ed8732;
   color: #1c1c1c;
@@ -347,7 +352,7 @@ button.cancel {
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   transition: background 0.2s;
   margin-top: 20px;
   margin-left: clamp(100px, 40vw, 290px);
@@ -356,12 +361,11 @@ button.cancel {
   background: #db8844;
 }
 
-
 @media (min-width: 931px) and (max-width: 1209px) {
-  .workout-name{
+  .workout-name {
     margin-top: 20px;
   }
-  .create-workout-container{
+  .create-workout-container {
     flex-direction: column;
   }
   .categories {
@@ -372,9 +376,9 @@ button.cancel {
     padding: 1rem;
     background: #f5f5f5;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     width: clamp(200px, 815px, 100vw);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   .drill-list {
@@ -385,17 +389,17 @@ button.cancel {
     border-radius: 10px;
     margin-bottom: 2rem;
     width: clamp(200px, 800px, 100vw);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    font-family: 'Inter', sans-serif;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Inter", sans-serif;
     flex-wrap: wrap;
   }
-  .button{
+  .button {
     margin-top: 0px;
   }
 }
 
 @media (max-width: 930px) {
-  .workout-name{
+  .workout-name {
     margin-top: 50px;
   }
   .newWorkout p {
@@ -410,9 +414,9 @@ button.cancel {
     padding: 1rem;
     background: #f5f5f5;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     width: clamp(200px, 815px, 87vw);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   .drill-list {
@@ -423,8 +427,8 @@ button.cancel {
     border-radius: 10px;
     margin-bottom: 2rem;
     width: clamp(200px, 800px, 85vw);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    font-family: 'Inter', sans-serif;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Inter", sans-serif;
     flex-wrap: wrap;
   }
 
@@ -437,16 +441,16 @@ button.cancel {
     margin-bottom: 1.5rem;
   }
 
-  .create-workout-container{
+  .create-workout-container {
     flex-direction: column;
   }
-  .button{
+  .button {
     margin-top: 0px;
   }
 }
 
 @media (max-width: 800px) {
-  .workout-name{
+  .workout-name {
     margin-top: 20px;
   }
   .newWorkout p {
@@ -461,9 +465,9 @@ button.cancel {
     padding: 1rem;
     background: #f5f5f5;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     width: clamp(200px, 815px, 85vw);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   .drill-list {
@@ -474,8 +478,8 @@ button.cancel {
     border-radius: 10px;
     margin-bottom: 2rem;
     width: clamp(200px, 800px, 83vw);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    font-family: 'Inter', sans-serif;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Inter", sans-serif;
     flex-wrap: wrap;
   }
 
@@ -488,25 +492,25 @@ button.cancel {
     margin-bottom: 1.5rem;
   }
 
-  .bg-img{
+  .bg-img {
     left: 30%;
   }
-  .create-workout-container{
+  .create-workout-container {
     flex-direction: column;
   }
-  .button{
+  .button {
     margin-top: 0px;
   }
 }
 
 @media (max-width: 600px) {
-  .workout-name{
+  .workout-name {
     margin-top: 0px;
   }
   .newWorkout p {
     height: 60px;
   }
-  .create-workout-container{
+  .create-workout-container {
     flex-direction: column;
   }
 
@@ -518,9 +522,9 @@ button.cancel {
     padding: 1rem;
     background: #f5f5f5;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     width: clamp(200px, 815px, 78vw);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   .drill-list {
@@ -531,24 +535,24 @@ button.cancel {
     border-radius: 10px;
     margin-bottom: 2rem;
     width: clamp(200px, 800px, 75vw);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    font-family: 'Inter', sans-serif;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Inter", sans-serif;
     flex-wrap: wrap;
   }
 
   input[type="text"] {
-  width: clamp(20px, 500px, 72vw);
-  padding: 0.8rem;
-  font-size: 1rem;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 1.5rem;
+    width: clamp(20px, 500px, 72vw);
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 1.5rem;
   }
 
-  .bg-img{
+  .bg-img {
     display: none;
   }
-  .button{
+  .button {
     margin-top: 0px;
   }
 }
