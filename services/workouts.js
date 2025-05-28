@@ -27,4 +27,14 @@ const getOwnWorkouts = async () => {
   return response.data;
 };
 
-export default { getReadyWorkouts, getOwnWorkouts };
+const getWorkoutDrills = async (workoutId) => {
+  if (!workoutId) {
+    throw new Error("Workout ID is required");
+  }
+  
+  const response = await axios.get(`${baseUrl}/${workoutId}/drills`);
+  console.log(response);
+  return response.data;
+};
+
+export default { getReadyWorkouts, getOwnWorkouts, getWorkoutDrills };
