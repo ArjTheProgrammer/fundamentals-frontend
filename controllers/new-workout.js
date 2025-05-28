@@ -7,26 +7,61 @@ let allDrills = [];
 let globalSelections = {};
 
 window.getSelectedDrills = function () {
+  // Instead of just getting drills from the DOM, use our saved selections
   const drills = [];
-  document.querySelectorAll(".drill-list .drill").forEach((label) => {
-    const checkbox = label.querySelector('input[type="checkbox"]');
-    if (checkbox.checked) {
-      const name = label.querySelector("strong").textContent;
-      const desc = label.querySelector('input[type="text"]').value;
-      drills.push({ name, desc });
+
+  // Iterate through all saved selections
+  Object.entries(globalSelections).forEach(([drillName, data]) => {
+    if (data.checked) {
+      drills.push({
+        name: drillName,
+        desc: data.instructions,
+        drill_id: data.drillId,
+      });
     }
   });
+
   return drills;
 };
 
 window.createWorkout = function () {
-  const workoutName = document.getElementById("workoutName").value;
-  const workoutDesc = document.getElementById("workoutDescription").value;
+  // Save current selections before showing preview
+  saveCurrentSelections();
+
+  const workoutName = document.getElementById("workoutName").value.trim();
+  const workoutDesc = document
+    .getElementById("workoutDescription")
+    .value.trim();
   const drills = window.getSelectedDrills();
+
+  // Validate workout name
+  if (!workoutName) {
+    alert("Please enter a workout name.");
+    return;
+  }
+
+  // Validate workout name length
+  if (workoutName.length > 50) {
+    alert("Workout name must be 50 characters or less.");
+    return;
+  }
+
+  // Validate workout description length
+  if (workoutDesc.length > 250) {
+    alert("Workout description must be 250 characters or less.");
+    return;
+  }
+
+  // Validate minimum drill selection
+  if (drills.length < 3) {
+    alert("Please select at least 3 drills for your workout.");
+    return;
+  }
+
   console.log(drills);
-  let html = `<strong>Name:</strong> ${workoutName || "(No name)"}<br>
+  let html = `<strong>Name:</strong> ${workoutName}<br>
     <strong>Description:</strong> ${
-      workoutDesc || "(No Description)"
+      workoutDesc || ""
     }<br><strong>Drills:</strong><ul>`;
   drills.forEach((d) => {
     html += `<li><strong>${d.name}</strong>: ${d.desc}</li>`;
@@ -36,9 +71,23 @@ window.createWorkout = function () {
   document.getElementById("previewModal").style.display = "block";
 };
 
-window.cancelWorkout = function () {
-  window.location.href = "myworkouts.html";
-};
+// Function to save current drill selections
+function saveCurrentSelections() {
+  document.querySelectorAll(".drill-list .drill").forEach((label) => {
+    const checkbox = label.querySelector('input[type="checkbox"]');
+    const drillName = label.querySelector("strong").textContent;
+    const customInstructions = label.querySelector('input[type="text"]').value;
+    const drillId = checkbox.dataset.drillId;
+
+    if (checkbox && drillName) {
+      globalSelections[drillName] = {
+        checked: checkbox.checked,
+        instructions: customInstructions,
+        drillId: drillId,
+      };
+    }
+  });
+}
 
 // Function to populate drill list dynamically based on selected category
 async function populateDrillList(category, initialLoad = false) {
@@ -46,19 +95,7 @@ async function populateDrillList(category, initialLoad = false) {
 
   // Save current selections before updating
   if (!initialLoad) {
-    document.querySelectorAll(".drill-list .drill").forEach((label) => {
-      const checkbox = label.querySelector('input[type="checkbox"]');
-      const drillName = label.querySelector("strong").textContent;
-      const customInstructions =
-        label.querySelector('input[type="text"]').value;
-
-      if (checkbox && drillName) {
-        globalSelections[drillName] = {
-          checked: checkbox.checked,
-          instructions: customInstructions,
-        };
-      }
-    });
+    saveCurrentSelections();
   }
 
   drillList.innerHTML = "<p>Loading drills...</p>";
@@ -98,7 +135,9 @@ async function populateDrillList(category, initialLoad = false) {
       const drillElement = document.createElement("label");
       drillElement.className = "drill";
       drillElement.innerHTML = `
-        <input type="checkbox" ${savedSelection.checked ? "checked" : ""} />
+        <input type="checkbox" data-drill-id="${drill.drill_id}" ${
+        savedSelection.checked ? "checked" : ""
+      } />
         <div>
           <strong>${drillName}</strong>
           <input type="text" value="${
@@ -107,6 +146,15 @@ async function populateDrillList(category, initialLoad = false) {
         </div>
       `;
       drillList.appendChild(drillElement);
+
+      // Store the drill_id in our global selections on initial setup
+      if (!globalSelections[drillName]) {
+        globalSelections[drillName] = {
+          checked: false,
+          instructions: drill.instructions,
+          drillId: drill.drill_id,
+        };
+      }
     });
   } catch (error) {
     console.error("Error fetching drills:", error);
@@ -128,10 +176,40 @@ document.addEventListener("DOMContentLoaded", async function () {
   const confirmCreate = document.getElementById("confirmCreate");
   if (confirmCreate) {
     confirmCreate.onclick = function () {
+      // Save current selections before creating workout
+      saveCurrentSelections();
+
       // Get the workout name and description
-      const workoutName = document.getElementById("workoutName").value;
-      const workoutDesc = document.getElementById("workoutDescription").value;
+      const workoutName = document.getElementById("workoutName").value.trim();
+      const workoutDesc = document
+        .getElementById("workoutDescription")
+        .value.trim();
+
+      // Validate workout name again (in case it was changed)
+      if (!workoutName) {
+        alert("Please enter a workout name.");
+        return;
+      }
+
+      // Validate workout name length
+      if (workoutName.length > 50) {
+        alert("Workout name must be 50 characters or less.");
+        return;
+      }
+
+      // Validate workout description length
+      if (workoutDesc.length > 250) {
+        alert("Workout description must be 250 characters or less.");
+        return;
+      }
+
       const drills = window.getSelectedDrills();
+
+      // Validate minimum drill selection
+      if (drills.length < 3) {
+        alert("Please select at least 3 drills for your workout.");
+        return;
+      }
 
       // Save workout using the service
       workoutService
@@ -150,6 +228,26 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     };
   }
+
+  // Add maxlength attributes to input fields
+  const workoutNameInput = document.getElementById("workoutName");
+  const workoutDescInput = document.getElementById("workoutDescription");
+
+  if (workoutNameInput) {
+    workoutNameInput.maxLength = 50;
+    workoutNameInput.required = true;
+  }
+
+  if (workoutDescInput) {
+    workoutDescInput.maxLength = 250;
+  }
+
+  // Add event listeners for checkboxes and text inputs to save selections in real-time
+  document.addEventListener("change", function (e) {
+    if (e.target.closest(".drill-list")) {
+      saveCurrentSelections();
+    }
+  });
 
   // Setup category radio buttons to filter drills
   const categoryRadios = document.querySelectorAll('input[name="category"]');
