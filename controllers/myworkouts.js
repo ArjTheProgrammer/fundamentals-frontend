@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     description.textContent = workout.description;
 
     const editLink = document.createElement("a");
-    editLink.href = "editworkout.html";
+    editLink.href = `editWorkout.html?id=${workout.workout_id}`;
     editLink.className = "edit-icon";
 
     const editIcon = document.createElement("img");

@@ -210,9 +210,6 @@ nav {
 }
 
 .workout-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   font-family: "Bebas Neue";
   font-weight: 400;
   font-size: clamp(1rem, 5vw, 3rem);

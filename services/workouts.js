@@ -63,4 +63,51 @@ const create = async (workoutData) => {
   return response.data;
 };
 
-export default { getReadyWorkouts, getOwnWorkouts, getWorkoutDrills, create };
+const getWorkout = async (workoutId) => {
+  if (!workoutId) {
+    throw new Error("Workout ID is required");
+  }
+
+  const response = await axios.get(`${baseUrl}/${workoutId}`);
+  console.log(response);
+  return response.data;
+};
+
+const update = async (workoutId, workoutData) => {
+  // Parse the user from localStorage
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user || !user.user_id) {
+    throw new Error("User not found in localStorage or missing user_id");
+  }
+
+  if (!workoutId) {
+    throw new Error("Workout ID is required");
+  }
+
+  // Format the request body according to the API requirements
+  const requestBody = {
+    user_id: user.user_id,
+    workout_name: workoutData.name,
+    description: workoutData.description || "",
+    is_default: 0,
+    drills: workoutData.drills.map((drill, index) => ({
+      drill_id: drill.drill_id,
+      drill_order: index + 1,
+      instructions: drill.desc || "",
+    })),
+  };
+
+  const response = await axios.put(`${baseUrl}/${workoutId}`, requestBody);
+  console.log(response);
+  return response.data;
+};
+
+export default {
+  getReadyWorkouts,
+  getOwnWorkouts,
+  getWorkoutDrills,
+  create,
+  getWorkout,
+  update,
+};
