@@ -124,7 +124,7 @@ nav {
 }
 
 .hero-subtitle {
-  font-size: clamp(0.7rem, 2vw, 4rem);
+  font-size: clamp(0.7rem, 1.5vw, 4rem);
   opacity: 0.8;
   text-align: center;
   font-family: "Inter", sans-serif;
@@ -144,7 +144,7 @@ nav {
 
 .basketball-image {
   position: absolute;
-  left: clamp(-20px, 10vw, 10px);
+  left: clamp(-20px, 10vw, 35px);
   bottom: -10px;
   width: clamp(150px, 30vw, 300px);
   z-index: 0;
@@ -161,17 +161,17 @@ nav {
 
 .athlete1 {
   align-self: start;
-  width: clamp(40px, 10vw, 90px);
+  width: clamp(40px, 10vw, 70px);
 }
 
 .athlete2 {
-  align-self: end;
-  width: clamp(50px, 10vw, 120px);
+  align-self: center;
+  width: clamp(50px, 10vw, 85px);
 }
 
 .athlete3 {
   align-self: start;
-  width: clamp(40px, 10vw, 90px);
+  width: clamp(40px, 10vw, 75px);
 }
 
 /* Workouts Grid */
