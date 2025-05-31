@@ -64,13 +64,20 @@ const create = async (workoutData) => {
 };
 
 const getWorkout = async (workoutId) => {
-  if (!workoutId) {
-    throw new Error("Workout ID is required");
-  }
+  try {
+    // Find workout in own workouts
+    const ownWorkouts = await getOwnWorkouts();
+    const workout = ownWorkouts.find((w) => w.workout_id == workoutId);
 
-  const response = await axios.get(`${baseUrl}/${workoutId}`);
-  console.log(response);
-  return response.data;
+    if (!workout) {
+      throw new Error(`Workout with ID ${workoutId} not found`);
+    }
+
+    return workout;
+  } catch (error) {
+    console.error("Error fetching workout:", error);
+    throw error;
+  }
 };
 
 const update = async (workoutId, workoutData) => {
@@ -99,7 +106,7 @@ const update = async (workoutId, workoutData) => {
   };
 
   const response = await axios.put(`${baseUrl}/${workoutId}`, requestBody);
-  console.log(response);
+  console.log("Update response:", response);
   return response.data;
 };
 
