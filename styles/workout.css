@@ -81,12 +81,13 @@ nav {
 .hero h1 {
   font-family: "Bebas Neue";
   font-weight: 400;
-  font-size: clamp(4rem, 5vw + 1rem, 8rem);
+  font-size: clamp(4rem, 8vw + 1rem, 8rem);
 }
 
 .hero p {
   font-size: clamp(0.7rem, 0.5vw + 0.8rem, 1rem);
   width: clamp(100px, 50vw, 500px);
+  
 }
 
 .workouts {
@@ -129,7 +130,7 @@ nav {
       rgba(28, 28, 28, 0.55),
       rgba(28, 28, 28, 0.55)
     ),
-    url(../assets/my-workout.jpg);
+    url(../assets/my-workout.png);
   background-size: cover;
   background-position: center;
 }
