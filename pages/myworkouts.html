@@ -60,7 +60,8 @@
       <section class="workouts-container"></section>
 
       <!-- Add Workout Button -->
-      <a href="new-workout.html" class="add-workout-btn">
+
+      <a href="./new-workout.html" class="add-workout-btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -76,6 +77,19 @@
           <line x1="5" y1="12" x2="19" y2="12"></line>
         </svg>
       </a>
+
+      <!-- View Workout Dialog -->
+      <dialog id="viewWorkout">
+        <div class="dialog-content">
+          <button id="closeDialog">X</button>
+          <h2>Workout Title</h2>
+          <p>workout description</p>
+          <h3>Skills and Drills</h3>
+          <div class="drills-container">
+            <!-- Drills will be dynamically inserted here -->
+          </div>
+        </div>
+      </dialog>
     </div>
   </body>
 </html>

@@ -1,5 +1,7 @@
 import workoutService from "../services/workouts.js";
 
+const viewWorkoutDialog = document.getElementById("viewWorkout");
+
 // Wait for DOM to fully load
 document.addEventListener("DOMContentLoaded", async function () {
   // Workout data
@@ -26,9 +28,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Add click event listener
     workoutCard.addEventListener("click", () => {
-      // Handle click event - could navigate to workout details page
-      console.log(`Selected workout: ${workout.title}`);
-      // Example: window.location.href = `/workout-details.html?workout=${encodeURIComponent(workout.title)}`;
+      viewWorkoutDialog
+        .querySelector("#closeDialog")
+        .addEventListener("click", () => {
+          viewWorkoutDialog.close();
+        });
+      localStorage.setItem("currentWorkout", workout.workout_id);
+      console.log(localStorage.getItem("currentWorkout"));
+
+      openDialog(workout);
     });
 
     workoutsContainer.appendChild(workoutCard);
@@ -85,4 +93,59 @@ document.addEventListener("DOMContentLoaded", async function () {
       card.style.transform = "translateY(0)";
     }, 500 + index * 100);
   });
+
+  const openDialog = async (workout) => {
+    try {
+      // Update dialog title and description
+      const dialogTitle = viewWorkoutDialog.querySelector("h2");
+      const dialogDesc = viewWorkoutDialog.querySelector("p");
+      const drillsContainer =
+        viewWorkoutDialog.querySelector(".drills-container");
+
+      dialogTitle.textContent = workout.workout_name;
+      dialogDesc.textContent = workout.description;
+
+      // Show loading state
+      drillsContainer.innerHTML = "<p>Loading drills...</p>";
+
+      // Fetch drills for this workout
+      const drills = await workoutService.getWorkoutDrills(
+        localStorage.getItem("currentWorkout")
+      );
+
+      console.log(drills);
+
+      // Clear container and populate with drills
+      drillsContainer.innerHTML = "";
+
+      if (drills.length === 0) {
+        drillsContainer.innerHTML = "<p>No drills found for this workout.</p>";
+      } else {
+        drills.forEach((drill) => {
+          const drillElement = createDrillElement(drill);
+          drillsContainer.appendChild(drillElement);
+        });
+      }
+
+      // Open the dialog
+      viewWorkoutDialog.showModal();
+    } catch (error) {
+      console.error("Error fetching workout drills:", error);
+    }
+  };
 });
+
+function createDrillElement(drill) {
+  const drillDiv = document.createElement("div");
+  drillDiv.classList.add("drill");
+
+  drillDiv.innerHTML = `
+      <div class="drill-title">
+        <h4>${drill.drill_name}</h4>
+        <span>${drill.skill_name}</span>
+      </div>
+      <p>${drill.instructions}</p>
+    `;
+
+  return drillDiv;
+}

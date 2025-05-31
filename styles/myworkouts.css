@@ -124,7 +124,7 @@ nav {
 }
 
 .hero-subtitle {
-  font-size: clamp(0.7rem, 2vw, 4rem);
+  font-size: clamp(0.7rem, 1.5vw, 4rem);
   opacity: 0.8;
   text-align: center;
   font-family: "Inter", sans-serif;
@@ -144,7 +144,7 @@ nav {
 
 .basketball-image {
   position: absolute;
-  left: clamp(-20px, 10vw, 10px);
+  left: clamp(-20px, 10vw, 35px);
   bottom: -10px;
   width: clamp(150px, 30vw, 300px);
   z-index: 0;
@@ -161,17 +161,17 @@ nav {
 
 .athlete1 {
   align-self: start;
-  width: clamp(40px, 10vw, 90px);
+  width: clamp(40px, 10vw, 70px);
 }
 
 .athlete2 {
-  align-self: end;
-  width: clamp(50px, 10vw, 120px);
+  align-self: center;
+  width: clamp(50px, 10vw, 85px);
 }
 
 .athlete3 {
   align-self: start;
-  width: clamp(40px, 10vw, 90px);
+  width: clamp(40px, 10vw, 75px);
 }
 
 /* Workouts Grid */
@@ -189,24 +189,34 @@ nav {
 .workout-card {
   background-color: #ed8732;
   width: clamp(300px, 40vw, 390px);
-  height: auto;
+  height: clamp(
+    100px,
+    20vw,
+    200px
+  ); /* Changed from height: auto to fixed height */
   padding: clamp(0px, 10vw, 30px) clamp(10px, 10vw, 20px);
   border-radius: 20px;
   display: flex;
   cursor: pointer;
   flex-direction: column;
   gap: clamp(3px, 1vw, 10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for smoother hover effects */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Added initial box-shadow to match */
 }
 
 .workout-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Added box-shadow on hover effect */
 }
 
 .workout-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-family: "Bebas Neue";
   font-weight: 400;
   font-size: clamp(1rem, 5vw, 3rem);
-  line-height: 120%;
+  line-height: 90%;
 }
 
 .tags {
@@ -231,6 +241,7 @@ nav {
 }
 
 .edit-icon {
+  margin-top: auto;
   align-self: end;
   color: #1c1c1c;
   width: 30px;
@@ -273,6 +284,90 @@ nav {
 .add-workout-btn svg {
   width: 25px;
   height: 25px;
+}
+
+/* Dialog Styles (copied from readyworkouts.css) */
+dialog#viewWorkout {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: clamp(300px, 80%, 700px);
+  margin: auto;
+  transform: none;
+}
+
+dialog#viewWorkout h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(30px, 10vw, 70px);
+  font-weight: 400;
+}
+
+dialog#viewWorkout h3 {
+  color: #ed8732;
+  margin: 20px 0;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-family: Inter;
+}
+
+dialog#viewWorkout::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+dialog#viewWorkout .dialog-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 50px;
+  padding-right: 20px;
+  height: 700px;
+}
+
+dialog#viewWorkout button#closeDialog {
+  align-self: flex-end;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.drills-container {
+  max-height: 50%;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.drills-container .drill {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.drills-container .drill .drill-title {
+  font-weight: 500;
+  line-height: 121%;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.drills-container .drill .drill-title span {
+  padding: 5px 20px;
+  margin-left: 20px;
+  background-color: #ed8732;
+  border-radius: 20px;
+}
+
+.drills-container .drill p {
+  font-weight: 400;
+  font-style: italic;
 }
 
 /* Responsive Design */
