@@ -2,10 +2,12 @@ import drillService from "../services/drills.js";
 
 const drillId = sessionStorage.getItem("selectedDrillId");
 
+console.log(drillId);
+
 // Function to populate drill cards
 const populateDrillCards = async () => {
-  const getHeader = document.querySelector(".hero h1");
-  const getParagraph = document.querySelector(".hero p");
+  const getHeader = document.querySelector(".hero .dribbling-title");
+  const getParagraph = document.querySelector(".hero p:last-child");
 
   getHeader.textContent = sessionStorage.getItem("header");
   getParagraph.textContent = sessionStorage.getItem("paragraph");
