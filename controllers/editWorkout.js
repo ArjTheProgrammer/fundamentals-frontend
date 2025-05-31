@@ -5,11 +5,16 @@ import workoutService from "../services/workouts.js";
 let allDrills = [];
 // Store all selections across categories
 let globalSelections = {};
+// Store the current workout ID
+let currentWorkoutId = null;
+// Store the workout drills
+let workoutDrills = [];
 
 window.cancelWorkout = function () {
   window.location.href = "myworkouts.html";
 };
 
+// Update the getSelectedDrills function to match backend expectations
 window.getSelectedDrills = function () {
   // Instead of just getting drills from the DOM, use our saved selections
   const drills = [];
@@ -62,7 +67,6 @@ window.createWorkout = function () {
     return;
   }
 
-  console.log(drills);
   let html = `<strong>Name:</strong> ${workoutName}<br>
     <strong>Description:</strong> ${
       workoutDesc || ""
@@ -71,6 +75,7 @@ window.createWorkout = function () {
     html += `<li><strong>${d.name}</strong>: ${d.desc}</li>`;
   });
   html += "</ul>";
+
   document.getElementById("previewContent").innerHTML = html;
   document.getElementById("previewModal").style.display = "block";
 };
@@ -136,23 +141,47 @@ async function populateDrillList(category, initialLoad = false) {
       const drillName = drill.drill_name;
       const savedSelection = globalSelections[drillName] || {};
 
+      // Check if this drill is part of the workout's drills
+      let isDrillInWorkout = workoutDrills.some(
+        (workoutDrill) => workoutDrill.drill_id === drill.drill_id
+      );
+
+      // Find the matching instruction from workout drills if it exists
+      let workoutDrillInstructions = "";
+      if (isDrillInWorkout) {
+        const workoutDrill = workoutDrills.find(
+          (wd) => wd.drill_id === drill.drill_id
+        );
+        if (workoutDrill) {
+          workoutDrillInstructions = workoutDrill.instructions;
+        }
+      }
+
       const drillElement = document.createElement("label");
       drillElement.className = "drill";
       drillElement.innerHTML = `
         <input type="checkbox" data-drill-id="${drill.drill_id}" ${
-        savedSelection.checked ? "checked" : ""
+        savedSelection.checked || isDrillInWorkout ? "checked" : ""
       } />
         <div>
           <strong>${drillName}</strong>
           <input type="text" value="${
-            savedSelection.instructions || drill.instructions
+            savedSelection.instructions ||
+            workoutDrillInstructions ||
+            drill.instructions
           }" />
         </div>
       `;
       drillList.appendChild(drillElement);
 
       // Store the drill_id in our global selections on initial setup
-      if (!globalSelections[drillName]) {
+      if (!globalSelections[drillName] && isDrillInWorkout) {
+        globalSelections[drillName] = {
+          checked: true,
+          instructions: workoutDrillInstructions || drill.instructions,
+          drillId: drill.drill_id,
+        };
+      } else if (!globalSelections[drillName]) {
         globalSelections[drillName] = {
           checked: false,
           instructions: drill.instructions,
@@ -167,7 +196,49 @@ async function populateDrillList(category, initialLoad = false) {
   }
 }
 
+// Function to load workout data for editing
+async function loadWorkoutForEditing(workoutId) {
+  try {
+    // Get the workout details
+    const workout = await workoutService.getWorkout(workoutId);
+
+    // Populate form fields
+    document.getElementById("workoutName").value = workout.workout_name;
+    document.getElementById("workoutDescription").value =
+      workout.description || "";
+
+    // Get all drills for this workout
+    workoutDrills = await workoutService.getWorkoutDrills(workoutId);
+
+    // Set the current workout ID
+    currentWorkoutId = workoutId;
+
+    return true;
+  } catch (error) {
+    console.error("Error loading workout for editing:", error);
+    alert("Error loading workout data. Please try again.");
+    return false;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", async function () {
+  // Get workout ID from URL params
+  const urlParams = new URLSearchParams(window.location.search);
+  const workoutId = urlParams.get("id");
+
+  if (!workoutId) {
+    alert("No workout ID specified. Redirecting to My Workouts page.");
+    window.location.href = "myworkouts.html";
+    return;
+  }
+
+  // Load the workout data first
+  const loaded = await loadWorkoutForEditing(workoutId);
+  if (!loaded) {
+    window.location.href = "myworkouts.html";
+    return;
+  }
+
   // Set up modal close button
   const closeModal = document.getElementById("closeModal");
   if (closeModal) {
@@ -176,11 +247,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     };
   }
 
-  // Set up confirm create button
+  // Set up confirm update button
   const confirmCreate = document.getElementById("confirmCreate");
   if (confirmCreate) {
     confirmCreate.onclick = function () {
-      // Save current selections before creating workout
+      // Save current selections before updating workout
       saveCurrentSelections();
 
       // Get the workout name and description
@@ -215,9 +286,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         return;
       }
 
-      // Save workout using the service
+      console.log(workoutName, drills, workoutDesc);
+      // Update workout using the service
       workoutService
-        .create({
+        .update(currentWorkoutId, {
           name: workoutName,
           description: workoutDesc,
           drills: drills,
@@ -227,10 +299,16 @@ document.addEventListener("DOMContentLoaded", async function () {
           window.location.href = "myworkouts.html";
         })
         .catch((error) => {
-          console.error("Error saving workout:", error);
-          alert("Failed to save workout. Please try again.");
+          console.error("Error updating workout:", error);
+          alert("Failed to update workout. Please try again.");
         });
     };
+  }
+
+  // Change button text to reflect update action
+  const createButton = document.querySelector(".create");
+  if (createButton && createButton.querySelector("p")) {
+    createButton.querySelector("p").textContent = "Update";
   }
 
   // Add maxlength attributes to input fields
