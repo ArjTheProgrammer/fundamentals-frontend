@@ -60,14 +60,14 @@ nav {
   padding: 20px clamp(10px, 10%, 100px);
 }
 
-.title h1 {
+.title .title-drill {
   font-family: "Bebas Neue";
-  font-size: clamp(4rem, 10vw, 7rem);
+  font-size: clamp(4rem, 10vw, 10rem);
   line-height: 120%;
 }
 
 .title p {
-  font-size: clamp(0.7rem, 2vw, 4rem);
+  font-size: clamp(0.7rem, 1.5vw, 4rem);
 }
 
 .hero img {

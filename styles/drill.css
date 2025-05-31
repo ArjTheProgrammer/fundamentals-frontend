@@ -52,11 +52,11 @@ nav {
   padding: 5px 15px;
 }
 
-.hero h1 {
+.hero .dribbling-title {
   font-family: "Bebas Neue";
   font-weight: 400;
-  font-size: clamp(50px, 5vw, 150px);
-  margin-bottom: 10px;
+  font-size: clamp(50px, 8vw, 150px);
+  margin-bottom: 0px;
   color: #ed8732;
 }
 
