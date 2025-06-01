@@ -2,6 +2,12 @@ import workoutService from "../services/workouts.js";
 
 const viewWorkoutDialog = document.getElementById("viewWorkout");
 
+const start = document.getElementById("start");
+
+start.addEventListener("click", () => {
+  window.location.href = "./startWorkout.html";
+});
+
 // Wait for DOM to fully load
 document.addEventListener("DOMContentLoaded", async function () {
   // Workout data
