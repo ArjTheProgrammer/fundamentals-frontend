@@ -15,38 +15,33 @@
     <script type="module" src="../controllers/startWorkout.js" defer></script>
   </head>
   <body>
-    <section class="progress-bars">
-      <div class="bar done"></div>
-      <div class="bar done"></div>
-      <div class="bar"></div>
+    <section class="progress-bars" id="progressBars">
+      <!-- Progress bars will be dynamically generated -->
     </section>
     <main>
-      <h2>Drill <span>2</span> of <span>7</span></h2>
+      <h2>Drill <span>1</span> of <span>5</span></h2>
       <div class="title">
-        <h1 class="drill_name">Pound + Change Drill</h1>
-        <span class="skill">Dribbling</span>
+        <h1 class="drill_name">Loading...</h1>
+        <span class="skill">Loading...</span>
       </div>
-      <p>
-        3 hard dribbles (pound dribble), then crossover or between the legs.
-        Repeat.
-      </p>
+      <p>Loading drill instructions...</p>
       <iframe
         width="700"
         height="400"
-        src="https://www.youtube.com/embed/BnvGa0I8bMc?si=JTYGPmouItXliZXs"
+        src=""
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-      <button>continue</button>
+      <button id="continueButton">continue</button>
     </main>
     <dialog id="finish">
       <img src="../assets/medal.png" alt="medal" />
       <h1>Congratulations!</h1>
       <p>You just got one step better. Keep showing up.</p>
-      <button>to workouts</button>
+      <button id="toWorkoutsButton">to workouts</button>
     </dialog>
   </body>
 </html>
