@@ -1,6 +1,9 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: #fef9f3;
+  font-family: "Inter", sans-serif;
+  position: relative;
 }
 
 .progress-bars {
@@ -18,4 +21,58 @@ body {
 
 .done {
   background-color: #ed8632;
+}
+
+main {
+  padding: 10px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+main h2 {
+  font-size: 32px;
+}
+
+main h2 span {
+  color: #ed8632;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.title h1 {
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  font-size: 70px;
+  margin: 0;
+}
+
+.skill {
+  align-self: end;
+  background-color: #ed8632;
+  padding: 5px 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+main p {
+  margin-bottom: 20px;
+}
+
+main iframe {
+  border-radius: 10px;
+}
+
+main button {
+  font-size: 24px;
+  background-color: #1c1c1c;
+  color: #fef9f3;
+  flex-grow: 0;
+  border-radius: 20px;
+  padding: 10px 20px;
+  align-self: end;
+  cursor: pointer;
 }
