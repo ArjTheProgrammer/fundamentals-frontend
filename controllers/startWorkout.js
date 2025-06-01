@@ -1,4 +1,5 @@
 import workoutService from "../services/workouts.js";
+import skillService from "../services/skill.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
   // Get the current workout from localStorage
@@ -29,7 +30,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Set up the continue/finish button
     const continueButton = document.getElementById("continueButton");
-    continueButton.addEventListener("click", function () {
+    continueButton.addEventListener("click", async function () {
+      const skillId = workoutDrills[currentDrillIndex].skill_id;
+
+      console.log(await skillService.trackSkill(skillId));
+
       if (currentDrillIndex < workoutDrills.length - 1) {
         // Move to the next drill
         currentDrillIndex++;
