@@ -1,0 +1,21 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.progress-bars {
+  padding: 20px 50px;
+  display: flex;
+  gap: 20px;
+}
+
+.bar {
+  flex: 1;
+  height: 10px;
+  background-color: #ed8632b0;
+  border-radius: 20px;
+}
+
+.done {
+  background-color: #ed8632;
+}
