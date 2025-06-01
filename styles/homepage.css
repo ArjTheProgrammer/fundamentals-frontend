@@ -211,13 +211,13 @@ main {
   padding: clamp(20px, 4vw, 40px);
   display: flex;
   width: 100%;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
 }
 
 .user-progress {
-  width: 50%;
+  width: clamp(200px, 40vw, 400px);
 }
 
 .user-progress h2 {
@@ -246,7 +246,7 @@ main {
 .skill-name {
   color: white;
   display: block;
-  margin-bottom: 5px;
+  border-bottom: 1px solid #fef9f3;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
@@ -268,6 +268,24 @@ main {
 .progress-chart svg {
   width: clamp(150px, 25vw, 250px);
   height: clamp(150px, 25vw, 250px);
+}
+
+.chart-container {
+  width: clamp(200px, 40%, 300px); /* Adjusted width */
+  height: 0;
+  padding-bottom: clamp(200px, 40%, 300px); /* Makes it square */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-container canvas {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  left: 0;
 }
 
 @media (max-width: 1300px) {
@@ -422,18 +440,6 @@ main {
   .bottom {
     height: clamp(400px, 60vh, 700px);
     padding: clamp(20px, 5vw, 30px);
-    flex-direction: column;
-    gap: clamp(15px, 4vw, 25px);
-  }
-
-  .user-progress {
-    height: clamp(200px, 25vh, 300px);
-    width: 100%;
-  }
-
-  .user-progress h2 {
-    font-size: clamp(2rem, 6vw, 3rem);
-    margin-bottom: clamp(15px, 4vw, 25px);
   }
 
   .skill-row {
@@ -466,6 +472,24 @@ main {
   .progress-chart svg {
     width: clamp(120px, 35vw, 200px);
     height: clamp(120px, 35vw, 200px);
+  }
+
+  .chart-container {
+    width: clamp(200px, 40%, 300px); /* Adjusted width */
+    height: 0;
+    padding-bottom: clamp(200px, 40%, 300px); /* Makes it square */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .chart-container canvas {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -503,11 +527,6 @@ main {
     font-size: 0.9rem;
   }
 
-  .user-progress h2 {
-    font-size: 2rem;
-    margin-bottom: 29px;
-  }
-
   .skill-value {
     font-size: 1rem;
     width: 35px;
@@ -533,10 +552,6 @@ main {
 @media (max-width: 375px) {
   .welcome-user h1 {
     font-size: 2rem;
-  }
-
-  .user-progress h2 {
-    font-size: 1.3rem;
   }
 
   .nav-link {
