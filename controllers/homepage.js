@@ -67,7 +67,7 @@ function createDoughnutChart(userData) {
     userData.rebounding_count || 0, // In case rebounding_count is not in the data
     userData.defense_count,
   ];
-  const barColors = ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "#1e7145"];
+  const barColors = ["#C26211", "#ED8732", "#F69B4F", "#F8B175", "#FFD0A9"];
 
   new Chart("donut", {
     type: "doughnut",
@@ -84,12 +84,14 @@ function createDoughnutChart(userData) {
       responsive: true,
       maintainAspectRatio: true,
       aspectRatio: 1,
-      legend: {
-        display: false, // This hides the legend
-      },
-      title: {
-        display: false,
-        text: "Skill Distribution",
+      plugins: {
+        legend: {
+          display: false, // This hides the legend
+        },
+        title: {
+          display: false,
+          text: "Skill Distribution",
+        },
       },
     },
   });
