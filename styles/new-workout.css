@@ -3,12 +3,6 @@ body {
   padding: 0;
   background: #fff;
   font-family: "Inter", sans-serif;
-}
-
-.container {
-  height: calc(100vh - 63.5px);
-  margin: auto;
-  padding: 2rem;
   background: linear-gradient(
     110deg,
     #fffbf7 0%,
@@ -19,6 +13,13 @@ body {
     #fffbf7 80%,
     #fffbf7 100%
   );
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  height: 100vh;
+  padding: 0 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -26,14 +27,20 @@ body {
 }
 
 .bg-img {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  bottom: 0;
   right: 0;
-  height: 100%;
-  width: clamp(600px, 600px, 36.04vw);
+  width: clamp(500px, 500px, 36.04vw);
   background-size: cover;
   background-position: center;
   z-index: 0;
+}
+
+.input {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .workoutName-container {
@@ -61,10 +68,10 @@ body {
   display: flex;
   max-width: 100%;
   flex-direction: column;
-  margin-top: 100px;
 }
 
-.workout-name p {
+.workout-name p,
+.workout-description p {
   font-size: 1.2rem;
 }
 
@@ -74,7 +81,7 @@ input[type="text"] {
   font-size: 1rem;
   border-radius: 10px;
   border: 1px solid #ccc;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 .create-workout-container {
@@ -363,9 +370,9 @@ button.cancel {
 }
 
 @media (min-width: 931px) and (max-width: 1209px) {
-  .workout-name {
+  /* .workout-name {
     margin-top: 20px;
-  }
+  } */
   .create-workout-container {
     flex-direction: column;
   }
@@ -400,9 +407,9 @@ button.cancel {
 }
 
 @media (max-width: 930px) {
-  .workout-name {
+  /* .workout-name {
     margin-top: 50px;
-  }
+  } */
   .newWorkout p {
     height: 40px;
   }
@@ -439,7 +446,7 @@ button.cancel {
     font-size: 1rem;
     border-radius: 10px;
     border: 1px solid #ccc;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
   }
 
   .create-workout-container {
@@ -451,11 +458,16 @@ button.cancel {
 }
 
 @media (max-width: 800px) {
-  .workout-name {
+  /* .workout-name {
     margin-top: 20px;
-  }
+  } */
   .newWorkout p {
     height: 60px;
+  }
+
+  .input {
+    flex-direction: column;
+    gap: 0;
   }
 
   .categories {
@@ -490,7 +502,7 @@ button.cancel {
     font-size: 1rem;
     border-radius: 10px;
     border: 1px solid #ccc;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
   }
 
   .bg-img {
@@ -505,9 +517,9 @@ button.cancel {
 }
 
 @media (max-width: 600px) {
-  .workout-name {
+  /* .workout-name {
     margin-top: 0px;
-  }
+  } */
   .newWorkout p {
     height: 60px;
   }
@@ -541,14 +553,14 @@ button.cancel {
     flex-wrap: wrap;
   }
 
-  input[type="text"] {
+  /* input[type="text"] {
     width: clamp(20px, 500px, 72vw);
     padding: 0.8rem;
     font-size: 1rem;
     border-radius: 10px;
     border: 1px solid #ccc;
     margin-bottom: 1.5rem;
-  }
+  } */
 
   .bg-img {
     display: none;

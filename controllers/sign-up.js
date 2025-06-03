@@ -1,85 +1,84 @@
-import usersService from '../services/users.js';
-import signupService from '../services/auth/signup.js';
+import usersService from "../services/users.js";
+import signupService from "../services/auth/signup.js";
 
-document.getElementById('signupForm').addEventListener('submit', function(e){
-    e.preventDefault();
+document.getElementById("signupForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const firstName = document.getElementById('firstname').value;
-    const lastName = document.getElementById('lastname').value;
-    const userName = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const confirmPass = document.getElementById('confirmPass').value;
+  const firstName = document.getElementById("firstname").value;
+  const lastName = document.getElementById("lastname").value;
+  const userName = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const confirmPass = document.getElementById("confirmPass").value;
 
-        const users = usersService.getAll();
+  // Validate all fields are filled
+  if (
+    !firstName ||
+    !lastName ||
+    !userName ||
+    !email ||
+    !password ||
+    !confirmPass
+  ) {
+    alert("All fields are required!");
+    return;
+  }
 
-    if (password !== confirmPass){
-        alert('Password do not match!');
-        return;
+  // Validate password match
+  if (password !== confirmPass) {
+    alert("Passwords do not match!");
+    return;
+  }
+
+  // Check username and email uniqueness
+  usersService.getAll().then((userList) => {
+    if (userList.some((user) => user.username === userName)) {
+      alert("This username is already taken!");
+      return;
     }
 
-    // let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+    if (userList.some((user) => user.email === email)) {
+      alert("This email is already used!");
+      return;
+    }
 
-    // if(users.some(user => user.userName === userName)){
-    //     alert("This email is already taken!");
-    //     return;
-    // }
+    const newUser = {
+      firstName: firstName,
+      lastName: lastName,
+      username: userName,
+      email: email,
+      password: password,
+    };
 
-    // if(users.some(user => user.email === email)){
-    //     alert("This email is already used!");
-    //     return;
-    // }
+    // Display loading indicator or disable the submit button if needed
+    const submitBtn = document.querySelector("button[type='submit']");
+    if (submitBtn) submitBtn.disabled = true;
 
-    // users.push({
-    //     name: firstName,
-    //     username: userName,
-    //     email: email,
-    //     password: password
-    // });
+    signupService
+      .createUser(newUser)
+      .then((response) => {
+        console.log("User registered successfully:", response);
 
-    // localStorage.setItem('registered', JSON.stringify(users));
-    
-    // document.getElementById('successModal').style.display = 'block';
-    
-    //  setTimeout(function() {
-    //     window.location.href = 'signin.html';
-    // }, 3000);
+        // Show success modal
+        document.getElementById("successModal").style.display = "block";
 
-    console.log(users);
-    users.then(userList => {
-        if (userList.some(user => user.username === userName)) {
-            alert("This username is already taken!");
-            return;
-        }
-
-        if (userList.some(user => user.email === email)) {
-            alert("This email is already used!");
-            return;
-        }
-
-        const newUser = {
-            firstName: firstName,
-            lastName: lastName,
-            username: userName,
-            email: email,
-            password: password
-        };
-
-        signupService.createUser(newUser).then(() => {
-            signupService.createUser(newUser);
-            document.getElementById('successModal').style.display = 'block';
-            setTimeout(function() {
-                window.location.href = 'sign-in.html';
-            }, 3000);
-        }).catch(error => {
-            console.error('Error during registration:', error);
-        });
-    });
+        // Redirect to sign-in page after delay
+        setTimeout(function () {
+          window.location.href = "sign-in.html";
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error("Error during registration:", error);
+        alert("Registration failed: " + error.message);
+      })
+      .finally(() => {
+        // Re-enable submit button if needed
+        if (submitBtn) submitBtn.disabled = false;
+      });
+  });
 });
 
-document.getElementById('closeModal').addEventListener('click', function(){
-    document.getElementById('successModal').style.display = 'none';
-
-    window.location.href = 'sign-in.html';
+document.getElementById("closeModal").addEventListener("click", function () {
+  document.getElementById("successModal").style.display = "none";
+  window.location.href = "sign-in.html";
 });
-    
