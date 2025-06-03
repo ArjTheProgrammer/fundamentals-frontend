@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles/settings.css" />
+    <script type="module" src="/controllers/settings.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -57,11 +58,37 @@
 
         <div class="profile-section">
           <div class="profile-photo">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/456/456212.png"
-              alt="Jose Neil Silagan"
-              style="border: 2px solid black"
-            />
+            <div class="avatar-upload">
+              <div class="avatar-preview">
+                <img
+                  id="avatar-image"
+                  src="https://cdn-icons-png.flaticon.com/512/456/456212.png"
+                  alt="Profile Photo"
+                />
+              </div>
+              <div class="avatar-edit">
+                <label for="imageInput">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 20h9"></path>
+                    <path
+                      d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                    ></path>
+                  </svg>
+                  <span>Change Photo</span>
+                </label>
+                <input type="file" id="imageInput" accept="image/*" />
+              </div>
+            </div>
           </div>
 
           <div class="form-fields">
