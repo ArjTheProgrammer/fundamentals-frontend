@@ -30,6 +30,14 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     return;
   }
 
+  // // Show success modal
+  // document.getElementById("successModal").style.display = "block";
+
+  // // Redirect to sign-in page after delay
+  // setTimeout(function () {
+  //   window.location.href = "sign-in.html";
+  // }, 3000);
+
   // Check username and email uniqueness
   usersService.getAll().then((userList) => {
     if (userList.some((user) => user.username === userName)) {
