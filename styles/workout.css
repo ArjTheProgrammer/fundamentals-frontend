@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: solid;
   font-family: "Inter", sans-serif;
 }
 
@@ -87,7 +88,6 @@ nav {
 .hero p {
   font-size: clamp(0.7rem, 0.5vw + 0.8rem, 1rem);
   width: clamp(100px, 50vw, 500px);
-  
 }
 
 .workouts {
@@ -104,12 +104,17 @@ nav {
   justify-content: center;
 }
 
+.workout-card a {
+  color: inherit; /* Keeps text color consistent */
+  text-decoration: none; /* Removes underline */
+}
+
 .workout-card img {
   aspect-ratio: 1/1;
   width: clamp(50px, 20vw, 100px);
 }
 
-.workout-card p {
+.workout-card span {
   color: #fef9f3;
   font-weight: 500;
   font-size: clamp(0, 5rem, 1vw + 1.5rem, 1.5rem);
