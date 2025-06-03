@@ -8,6 +8,23 @@ console.log(drillId);
 const populateDrillCards = async () => {
   const getHeader = document.querySelector(".hero .dribbling-title");
   const getParagraph = document.querySelector(".hero p:last-child");
+  const getHeaderBg = document.querySelector(".hero");
+
+  const backgroundImages = {
+    2: "https://assets.loescher.it/Risorse/DAN/Public/O_D9046/D9046/Materiali_disponibili/images/basketball4.jpg",
+    3: "https://rockymountevents.com/wp-content/uploads/2018/09/shooting-a-basketball.jpg",
+    4: "https://scholarbasketball.com/wp-content/uploads/2024/11/From-Positioning-to-Timing_-The-Art-of-Rebounding.png",
+    5: "https://basketballhq.com/wp-content/uploads/2015/06/Defense.jpg",
+  };
+
+  const newImage = backgroundImages[parseInt(drillId)];
+
+  if (newImage) {
+    getHeaderBg.style.backgroundImage = `linear-gradient(
+      rgba(28, 28, 28, 0.55),
+      rgba(28, 28, 28, 0.55)
+    ), url("${newImage}")`;
+  }
 
   getHeader.textContent = sessionStorage.getItem("header");
   getParagraph.textContent = sessionStorage.getItem("paragraph");
