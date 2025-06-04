@@ -10,30 +10,6 @@ body {
   background-color: #1c1c1c;
 }
 
-/* Create the split background for the entire page */
-/* body:before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90%;
-  background-color: #fef9f3;
-  z-index: -2;
-} */
-
-/* Add a diagonal divider between the black and orange background */
-/* .divider {
-  position: fixed;
-  width: 115%;
-  height: 200px;
-  background-color: #1c1c1c;
-  top: 60%;
-  left: -10%;
-  transform: rotate(-3deg);
-  z-index: -1;
-} */
-
 /* Navigation */
 nav {
   padding: 20px clamp(10px, 5%, 40px);
@@ -97,17 +73,6 @@ nav {
   justify-content: center;
   padding: 20px clamp(10px, 10%, 100px);
 }
-
-/* Create a transparent section for hero so we can see the global background */
-/* .hero:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-} */
 
 .hero-title {
   font-family: "Bebas Neue", sans-serif;
