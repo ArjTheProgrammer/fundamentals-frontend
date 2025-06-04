@@ -1,6 +1,26 @@
 import usersService from "../services/users.js";
 import signupService from "../services/auth/signup.js";
 
+// Add this function to validate password complexity
+function validatePassword(password) {
+  // Check for minimum length of 8 characters
+  if (password.length < 8) return false;
+
+  // Check for at least one lowercase letter
+  if (!/[a-z]/.test(password)) return false;
+
+  // Check for at least one uppercase letter
+  if (!/[A-Z]/.test(password)) return false;
+
+  // Check for at least one digit
+  if (!/\d/.test(password)) return false;
+
+  // Check for at least one special character
+  if (!/[!@#$%^&*()_\-+={}[\]\\|:;'<>,.?/]/.test(password)) return false;
+
+  return true;
+}
+
 document.getElementById("signupForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -27,6 +47,14 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
   // Validate password match
   if (password !== confirmPass) {
     alert("Passwords do not match!");
+    return;
+  }
+
+  // Validate password complexity
+  if (!validatePassword(password)) {
+    alert(
+      "Password must be at least 8 characters long and include uppercase and lowercase letters, numbers, and special characters"
+    );
     return;
   }
 
