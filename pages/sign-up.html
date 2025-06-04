@@ -72,6 +72,8 @@
               placeholder="Password"
               autocomplete="new-password"
               minlength="7"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+={}[\]|:;'<>,.?/])[A-Za-z\d!@#$%^&*()_\-+={}[\]|:;'<>,.?/]{8,}$"
+              title="Password must be at least 8 characters long and include uppercase and lowercase letters, numbers, and special characters"
               required
             />
           </div>
@@ -83,6 +85,8 @@
               placeholder="Confirm Password"
               autocomplete="new-password"
               minlength="7"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+={}[\]|:;'<>,.?/])[A-Za-z\d!@#$%^&*()_\-+={}[\]|:;'<>,.?/]{8,}$"
+              title="Password must be at least 8 characters long and include uppercase and lowercase letters, numbers, and special characters"
               required
             />
           </div>

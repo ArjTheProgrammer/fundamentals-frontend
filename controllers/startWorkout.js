@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         // Check if this is the last drill
         if (currentDrillIndex === workoutDrills.length - 1) {
-          continueButton.textContent = "finish";
+          continueButton.textContent = "Finish";
         }
       } else {
         // Show completion dialog
