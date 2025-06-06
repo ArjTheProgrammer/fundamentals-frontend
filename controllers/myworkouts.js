@@ -117,6 +117,12 @@ document.addEventListener("DOMContentLoaded", async function () {
       viewWorkoutDialog.close();
     });
 
+  // Set up start button functionality
+  const startButton = viewWorkoutDialog.querySelector("#start");
+  startButton.addEventListener("click", () => {
+    window.location.href = "./startWorkout.html";
+  });
+
   // Function to open dialog with workout details
   const openDialog = async (workout) => {
     try {
