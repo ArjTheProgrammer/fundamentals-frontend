@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fundamentals</title>
-    <link rel="stylesheet" href="/styles/sign-in.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/fundamentals.png" />
+    <link rel="stylesheet" href="/styles/sign-in.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="../controllers/sign-in.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="logo-container">
-            <img src="/assets/fundalogo.png" alt="" class="logo">
-        </div>
+      <div class="logo-container">
+        <img src="/assets/fundalogo.png" alt="" class="logo" />
+      </div>
 
-        <div class="form-container">
-            <form class="signin-form">
-                <div class="form-group" id="form-group">
-                    <input type="text" id="username" class="form-control" placeholder="Username" autocomplete="username" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password" class="form-control" placeholder="Password" autocomplete="current-password" required>
-                </div>
+      <div class="form-container">
+        <form class="signin-form">
+          <div class="form-group" id="form-group">
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              placeholder="Username"
+              autocomplete="username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="Password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
 
-                <button type="submit" class="btn">Sign In</button>
+          <button type="submit" class="btn">Sign In</button>
 
-                <div class="forgot-link">
-                    <a href="#" class="forgotPassword">Forgot Password</a>
-                </div>
+          <div class="forgot-link">
+            <a href="#" class="forgotPassword">Forgot Password</a>
+          </div>
 
-                <p class="signup-link">Don't have an account?<a href="/pages/sign-up.html"> Sign Up</a></p>
-                
-            </form>
-        </div>
+          <p class="signup-link">
+            Don't have an account?<a href="/pages/sign-up.html"> Sign Up</a>
+          </p>
+        </form>
+      </div>
     </div>
 
     <div id="errorModal" class="modal">
-        <div class="modal-content">
-            <h3>Login Failed</h3>
-            <p>Incorrect username or password. Please try again.</p>
-            <button id="closeBtn" class="close-btn">Close</button>
-        </div>
+      <div class="modal-content">
+        <h3>Login Failed</h3>
+        <p>Incorrect username or password. Please try again.</p>
+        <button id="closeBtn" class="close-btn">Close</button>
+      </div>
     </div>
-</body>
+  </body>
 </html>
