@@ -9,6 +9,49 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles/settings.css" />
+    <script src="../controllers/settings.js" defer></script>
+    <script src="../controllers/editUser.js" defer></script>
+    <style>
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        align-items: center;
+        justify-content: center;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px 30px;
+        border: 1px solid #888;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .modal-content button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #ed8732;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .modal-content button:hover {
+        background-color: #e07a17;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -20,7 +63,7 @@
         <nav class="nav-menu">
           <a
             href="settings.html"
-            class="nav-item active"
+            class="nav-item"
             style="text-decoration: none"
           >
             <svg
@@ -37,7 +80,7 @@
           </a>
           <a
             href="editUser.html"
-            class="nav-item"
+            class="nav-item active"
             style="text-decoration: none"
           >
             <svg
@@ -90,33 +133,42 @@
                   alt="Profile Photo"
                 />
               </div>
+              <div class="avatar-edit">
+                <input type="file" id="imageInput" accept="image/*" />
+                <label for="imageInput">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+                    ></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                  </svg>
+                  Change Photo
+                </label>
+              </div>
             </div>
           </div>
 
           <div class="form-fields">
             <div class="field-group">
               <label class="field-label">FIRST NAME</label>
-              <input
-                type="text"
-                class="field-input"
-                value="Jose Neil"
-                readonly
-              />
+              <input type="text" class="field-input" placeholder="First Name" />
             </div>
 
             <div class="field-group">
               <label class="field-label">LAST NAME</label>
-              <input type="text" class="field-input" value="Silagan" readonly />
+              <input type="text" class="field-input" placeholder="Last Name" />
             </div>
 
             <div class="field-group">
               <label class="field-label">USERNAME</label>
-              <input
-                type="text"
-                class="field-input"
-                value="ArjTheProgrammer"
-                readonly
-              />
+              <input type="text" class="field-input" placeholder="Username" />
             </div>
 
             <div class="field-group">
@@ -124,10 +176,48 @@
               <input
                 type="text"
                 class="field-input"
-                value="neilsilagan@gmail.com"
-                readonly
+                placeholder="Email address"
               />
             </div>
+
+            <!-- Password Change Section -->
+
+            <div class="field-group">
+              <label class="field-label">CURRENT PASSWORD</label>
+              <input
+                type="password"
+                class="field-input"
+                id="currentPassword"
+                placeholder="Enter your current password"
+              />
+            </div>
+
+            <div class="field-group">
+              <label class="field-label">NEW PASSWORD</label>
+              <input
+                type="password"
+                class="field-input"
+                id="newPassword"
+                placeholder="Enter new password"
+                minlength="8"
+                title="Password must be at least 8 characters long and include uppercase and lowercase letters, numbers, and special characters"
+              />
+            </div>
+
+            <div class="field-group">
+              <label class="field-label">CONFIRM PASSWORD</label>
+              <input
+                type="password"
+                class="field-input"
+                id="confirmPassword"
+                placeholder="Confirm new password"
+                minlength="8"
+              />
+            </div>
+
+            <button type="button" class="save-button" id="changePasswordBtn">
+              Save
+            </button>
           </div>
         </div>
       </div>
