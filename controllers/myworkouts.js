@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const editIcon = document.createElement("img");
     editIcon.src =
-      "https://img.icons8.com/?size=25&id=EpwgBizRWig8&format=png&color=000000";
+      "../assets/icons/edit-black.png";
     editIcon.alt = "Edit";
 
     editLink.appendChild(editIcon);

@@ -248,6 +248,11 @@ nav {
   transition: all 0.3s ease;
 }
 
+.edit-icon img {
+  aspect-ratio: 1 / 1;
+  width: 20px;
+}
+
 .hero-content {
   z-index: 2;
 }

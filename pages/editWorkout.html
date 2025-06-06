@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Workout</title>
-    <link rel="stylesheet" href="/styles/editWorkout.css" />
+    <link rel="stylesheet" href="/styles/new-workout.css" />
     <script type="module" src="/controllers/editWorkout.js" defer></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
@@ -25,28 +25,30 @@
           <p>EDIT WORKOUT</p>
         </div>
 
-        <div class="workout-name">
-          <label for="workoutName">
-            <p>Workout name</p>
-          </label>
-          <input
-            type="text"
-            id="workoutName"
-            placeholder="Enter workout name"
-            maxlength="50"
-            required
-          />
-        </div>
-        <div class="workout-description">
-          <label for="workoutDescription">
-            <p>Description</p>
-          </label>
-          <input
-            type="text"
-            id="workoutDescription"
-            placeholder="Enter Description"
-            maxlength="250"
-          />
+        <div class="input">
+          <div class="workout-name">
+            <label for="workoutName">
+              <p>Workout name</p>
+            </label>
+            <input
+              type="text"
+              id="workoutName"
+              placeholder="Enter workout name"
+              maxlength="50"
+              required
+            />
+          </div>
+          <div class="workout-description">
+            <label for="workoutDescription">
+              <p>Description</p>
+            </label>
+            <input
+              type="text"
+              id="workoutDescription"
+              placeholder="Enter Description"
+              maxlength="250"
+            />
+          </div>
         </div>
       </div>
 
@@ -150,9 +152,9 @@
           style="cursor: pointer; float: right; font-size: 24px"
           >&times;</span
         >
-        <p>CREATE WORKOUT</p>
+        <p>UPDATE WORKOUT</p>
         <div id="previewContent"></div>
-        <button id="confirmCreate">Create</button>
+        <button id="confirmCreate">Update</button>
       </div>
     </div>
   </body>
