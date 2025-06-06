@@ -1,4 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Get user data from localStorage and populate form fields
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user) {
+    // Populate form fields with user data
+    const inputFields = document.querySelectorAll(".form-fields .field-input");
+
+    // Populate first name, last name, username, and email fields
+    inputFields.forEach((input) => {
+      const placeholder = input.getAttribute("placeholder").toLowerCase();
+
+      if (placeholder.includes("first name") && user.first_name) {
+        input.value = user.first_name;
+      } else if (placeholder.includes("last name") && user.last_name) {
+        input.value = user.last_name;
+      } else if (placeholder.includes("username") && user.username) {
+        input.value = user.username;
+      } else if (placeholder.includes("email") && user.email) {
+        input.value = user.email;
+      }
+      // Password fields are intentionally left empty
+    });
+
+    // If user has a profile image, display it
+    if (user.profile_image) {
+      document.getElementById("avatar-image").src = user.profile_image;
+    }
+  }
+
   // Image upload preview functionality
   document
     .getElementById("imageInput")
