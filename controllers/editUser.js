@@ -1,3 +1,5 @@
+import userService from "../services/users.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   // Get user data from localStorage and populate form fields
   const user = JSON.parse(localStorage.getItem("user"));
@@ -53,31 +55,128 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
   document.body.insertAdjacentHTML("beforeend", modalHTML);
 
+  // Add save button at the bottom of the form
+  const formFields = document.querySelector(".form-fields");
+  if (formFields && !document.getElementById("saveProfileBtn")) {
+    const saveButton = document.createElement("button");
+    saveButton.type = "button";
+    saveButton.className = "save-button";
+    saveButton.id = "saveProfileBtn";
+    saveButton.textContent = "Save Profile";
+    formFields.appendChild(saveButton);
+  }
+
+  // Handle profile information save
+  document
+    .getElementById("saveProfileBtn")
+    .addEventListener("click", async function () {
+      if (!user) {
+        showModal("Error", "You must be logged in to update your profile.");
+        return;
+      }
+
+      try {
+        const firstNameInput = document.querySelector(
+          'input[placeholder="First Name"]'
+        );
+        const lastNameInput = document.querySelector(
+          'input[placeholder="Last Name"]'
+        );
+        const usernameInput = document.querySelector(
+          'input[placeholder="Username"]'
+        );
+        const emailInput = document.querySelector(
+          'input[placeholder="Email address"]'
+        );
+
+        const firstName = firstNameInput.value.trim();
+        const lastName = lastNameInput.value.trim();
+        const username = usernameInput.value.trim();
+        const email = emailInput.value.trim();
+
+        // Check if any fields are empty
+        if (!firstName || !lastName || !username || !email) {
+          showModal("Error", "All profile fields are required!");
+          return;
+        }
+
+        let updated = false;
+        let updatedUserData = { ...user };
+
+        // Update first name if changed
+        if (firstName !== user.first_name) {
+          await userService.updateFirstName(user.user_id, firstName);
+          updatedUserData.first_name = firstName;
+          updated = true;
+        }
+
+        // Update last name if changed
+        if (lastName !== user.last_name) {
+          await userService.updateLastName(user.user_id, lastName);
+          updatedUserData.last_name = lastName;
+          updated = true;
+        }
+
+        // Update username if changed
+        if (username !== user.username) {
+          try {
+            await userService.updateUsername(user.user_id, username);
+            updatedUserData.username = username;
+            updated = true;
+          } catch (error) {
+            if (error.response && error.response.status === 400) {
+              showModal("Error", "Username is already taken!");
+              return;
+            }
+            throw error;
+          }
+        }
+
+        // Update email if changed
+        if (email !== user.email) {
+          try {
+            await userService.updateEmail(user.user_id, email);
+            updatedUserData.email = email;
+            updated = true;
+          } catch (error) {
+            if (error.response && error.response.status === 400) {
+              showModal("Error", "Email is already taken!");
+              return;
+            }
+            throw error;
+          }
+        }
+
+        // If any updates were made, update localStorage
+        if (updated) {
+          localStorage.setItem("user", JSON.stringify(updatedUserData));
+          showModal("Success", "Profile updated successfully!");
+        } else {
+          showModal("Information", "No changes were made to your profile.");
+        }
+      } catch (error) {
+        console.error("Error updating profile:", error);
+        showModal("Error", "Failed to update profile. Please try again later.");
+      }
+    });
+
   // Handle password change
   document
     .getElementById("changePasswordBtn")
-    .addEventListener("click", function () {
+    .addEventListener("click", async function () {
       const currentPassword = document.getElementById("currentPassword").value;
       const newPassword = document.getElementById("newPassword").value;
       const confirmPassword = document.getElementById("confirmPassword").value;
 
-      const modal = document.getElementById("passwordModal");
-      const modalMessage = document.getElementById("modalMessage");
-      const modalTitle = document.getElementById("modalTitle");
-
       // Check if all fields are filled
       if (!currentPassword || !newPassword || !confirmPassword) {
-        modalTitle.textContent = "Error";
-        modalMessage.textContent = "All password fields are required!";
-        modal.style.display = "flex";
+        showModal("Error", "All password fields are required!");
         return;
       }
 
       // Check if new password and confirm password match
       if (newPassword !== confirmPassword) {
-        modalTitle.textContent = "Error";
-        modalMessage.textContent = "New passwords do not match!";
-        modal.style.display = "flex";
+        showModal("Error", "New passwords do not match!");
         return;
       }
 
@@ -85,23 +184,48 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentUser = JSON.parse(localStorage.getItem("user"));
 
       if (!currentUser) {
-        modalTitle.textContent = "Error";
-        modalMessage.textContent = "You must be logged in to change password.";
-        modal.style.display = "flex";
+        showModal("Error", "You must be logged in to change password.");
         return;
       }
 
-      // Here you would typically make an API call to verify current password and update with new password
-      // For now, just show success message
-      modalTitle.textContent = "Success";
-      modalMessage.textContent = "Password changed successfully!";
-      modal.style.display = "flex";
+      try {
+        // Make API call to update password
+        await userService.updatePassword(
+          currentUser.user_id,
+          currentPassword,
+          newPassword
+        );
 
-      // Clear password fields
-      document.getElementById("currentPassword").value = "";
-      document.getElementById("newPassword").value = "";
-      document.getElementById("confirmPassword").value = "";
+        showModal("Success", "Password changed successfully!");
+
+        // Clear password fields
+        document.getElementById("currentPassword").value = "";
+        document.getElementById("newPassword").value = "";
+        document.getElementById("confirmPassword").value = "";
+      } catch (error) {
+        console.error("Error changing password:", error);
+
+        if (error.response && error.response.status === 401) {
+          showModal("Error", "Current password is incorrect!");
+        } else {
+          showModal(
+            "Error",
+            "Failed to change password. Please try again later."
+          );
+        }
+      }
     });
+
+  // Function to show modal with custom title and message
+  function showModal(title, message) {
+    const modal = document.getElementById("passwordModal");
+    const modalMessage = document.getElementById("modalMessage");
+    const modalTitle = document.getElementById("modalTitle");
+
+    modalTitle.textContent = title;
+    modalMessage.textContent = message;
+    modal.style.display = "flex";
+  }
 
   // Close modal when close button is clicked
   document

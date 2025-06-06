@@ -10,8 +10,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles/settings.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../controllers/settings.js" defer></script>
-    <script src="../controllers/editUser.js" defer></script>
+    <script src="../controllers/editUser.js" type="module" defer></script>
     <style>
       /* Modal styles */
       .modal {
@@ -217,7 +218,7 @@
             </div>
 
             <button type="button" class="save-button" id="changePasswordBtn">
-              Save
+              Save password
             </button>
           </div>
         </div>
