@@ -200,6 +200,8 @@ main {
 
 .welcome-image img {
   width: 100%;
+  position: relative;
+  top: 15px;
   max-height: clamp(300px, 60vh, 440px);
   object-fit: contain;
 }
@@ -240,13 +242,13 @@ main {
 }
 
 .skill-line-container {
+  border-bottom: 1px solid #fef9f3;
   flex: 1;
 }
 
 .skill-name {
   color: white;
   display: block;
-  border-bottom: 1px solid #fef9f3;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
@@ -271,9 +273,9 @@ main {
 }
 
 .chart-container {
-  width: clamp(200px, 40%, 300px); /* Adjusted width */
+  width: clamp(100px, 40%, 300px); /* Adjusted width */
   height: 0;
-  padding-bottom: clamp(200px, 40%, 300px); /* Makes it square */
+  padding-bottom: clamp(100px, 40%, 300px); /* Makes it square */
   position: relative;
   display: flex;
   justify-content: center;
@@ -475,9 +477,7 @@ main {
   }
 
   .chart-container {
-    width: clamp(200px, 40%, 300px); /* Adjusted width */
     height: 0;
-    padding-bottom: clamp(200px, 40%, 300px); /* Makes it square */
     position: relative;
     display: flex;
     justify-content: center;

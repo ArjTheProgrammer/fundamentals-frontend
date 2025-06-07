@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       updateSkillValue("Dribbling", userData.dribbling_count);
       updateSkillValue("Shooting", userData.shooting_count);
       updateSkillValue("Passing", userData.passing_count);
+      updateSkillValue("Rebounding", userData.rebounding_count);
       updateSkillValue("Defense", userData.defense_count);
 
       // Create the doughnut chart with the dynamic data
@@ -64,7 +65,7 @@ function createDoughnutChart(userData) {
     userData.dribbling_count,
     userData.passing_count,
     userData.shooting_count,
-    userData.rebounding_count || 0, // In case rebounding_count is not in the data
+    userData.rebounding_count,
     userData.defense_count,
   ];
   const barColors = ["#C26211", "#ED8732", "#F69B4F", "#F8B175", "#FFD0A9"];
