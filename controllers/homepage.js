@@ -60,11 +60,11 @@ function updateSkillValue(skillName, value) {
 
 // Function to create the doughnut chart with dynamic data
 function createDoughnutChart(userData) {
-  const xValues = ["Dribbling", "Passing", "Shooting", "Rebounding", "Defense"];
+  const xValues = ["Dribbling", "Shooting", "Passing", "Rebounding", "Defense"];
   const yValues = [
     userData.dribbling_count,
-    userData.passing_count,
     userData.shooting_count,
+    userData.passing_count,
     userData.rebounding_count,
     userData.defense_count,
   ];
