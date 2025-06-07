@@ -1,0 +1,323 @@
+/* Add a diagonal divider between the black and orange background */
+
+.divider {
+  position: fixed;
+  width: 115%;
+  height: 200px;
+  background-color: #1c1c1c;
+  top: 60%;
+  left: -10%;
+  transform: rotate(-3deg);
+  z-index: -1;
+} /* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  background-color: #1c1c1c;
+}
+
+/* Navigation */
+nav {
+  padding: 20px clamp(10px, 5%, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+  gap: clamp(10px, 10%, 100px);
+}
+
+.nav-link:hover {
+  background-color: #1c1c1c;
+  color: #fef9f3;
+}
+
+.nav-link.active {
+  background-color: #1c1c1c;
+  color: #fef9f3;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: clamp(0.5rem, 1vw, 1rem);
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  object-fit: cover;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(
+    177deg,
+    #ffffff 0%,
+    #ffffff 70%,
+    #ffffff 70%,
+    #ffffff 70%,
+    #1c1c1c 71%
+  );
+  height: clamp(300px, 30vw, 500px);
+  display: flex;
+  justify-content: center;
+  padding: 20px clamp(10px, 10%, 100px);
+}
+
+.hero-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color: #1c1c1c;
+  z-index: 4;
+  font-size: clamp(3.5rem, 10vw, 14rem);
+  line-height: 120%;
+}
+
+.orange-text {
+  color: #ff9136;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.7rem, 1.5vw, 4rem);
+  opacity: 0.8;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #1c1c1c;
+}
+
+.hero-images {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: clamp(15vw, 20%, 180px);
+  bottom: clamp(10px, 5vw, 50px);
+  right: clamp(20px, 2vw, 120px);
+  z-index: 0;
+}
+
+.basketball-image {
+  position: absolute;
+  left: clamp(-20px, 10vw, 35px);
+  bottom: -10px;
+  width: clamp(150px, 30vw, 300px);
+  z-index: 0;
+}
+
+.athlete-image {
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ff7700;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  max-width: 100%;
+}
+
+.athlete1 {
+  align-self: start;
+  width: clamp(40px, 10vw, 70px);
+}
+
+.athlete2 {
+  align-self: center;
+  width: clamp(50px, 10vw, 85px);
+}
+
+.athlete3 {
+  align-self: start;
+  width: clamp(40px, 10vw, 75px);
+}
+
+/* Workouts Grid */
+.workouts-container {
+  background-color: #1c1c1c;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: clamp(20px, 10vw, 50px);
+  padding: clamp(10px, 50vw, 20px);
+  margin-bottom: 50px;
+}
+
+.workout-card {
+  background-color: #ed8732;
+  width: clamp(300px, 40vw, 390px);
+  height: clamp(100px, 20vw, 200px);
+  padding: clamp(0px, 10vw, 30px) clamp(10px, 10vw, 20px);
+  border-radius: 20px;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  gap: clamp(3px, 1vw, 10px);
+}
+
+.workout-card:hover {
+  transform: translateY(-5px);
+}
+
+.workout-title {
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  font-size: clamp(1rem, 5vw, 3rem);
+  line-height: 90%;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  background-color: #fef9f3;
+  color: #1c1c1c;
+  padding: 3px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+.workout-description {
+  font-style: italic;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+dialog#viewWorkout {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: clamp(300px, 80%, 700px);
+  margin: auto;
+  transform: none;
+}
+
+dialog#viewWorkout h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(30px, 10vw, 70px);
+  font-weight: 400;
+}
+
+dialog#viewWorkout h3 {
+  color: #ed8732;
+  margin: 20px 0;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-family: Inter;
+}
+
+dialog#viewWorkout::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+dialog#viewWorkout .dialog-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 50px;
+  padding-right: 20px;
+  height: 700px;
+}
+
+dialog#viewWorkout button#closeDialog {
+  align-self: flex-end;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.drills-container {
+  max-height: 50%;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.drills-container .drill {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.drills-container .drill .drill-title {
+  font-weight: 500;
+  line-height: 121%;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.drills-container .drill .drill-title span {
+  padding: 5px 20px;
+  margin-left: 20px;
+  background-color: #ed8732;
+  border-radius: 20px;
+}
+
+.drills-container .drill p {
+  font-weight: 400;
+  font-style: italic;
+}
+
+dialog #start {
+  align-self: flex-end; /* For flexbox, use align-self: flex-end */
+  margin-top: auto; /* Push it to the bottom */
+  margin-bottom: 20px;
+  font-size: 24px;
+  background-color: #1c1c1c;
+  color: #fef9f3;
+  flex-grow: 0;
+  border-radius: 20px;
+  padding: 10px 30px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+  .workouts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .workouts-grid {
+    padding: 30px 20px;
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,13 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentals</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="controllers/index.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./index.js" defer></script>
+    <link rel="icon" type="image/png" href="/assets/fundamentals.png" />
     <title>Fundamentals</title>
-</head>
-<body>
+  </head>
+  <body>
+    <section class="landing-page">
+      <img
+        src="./assets/fundamentals.png"
+        alt="Fundamentals Logo"
+        class="logo"
+      />
+      <img
+        src="./assets/player.png"
+        alt="Basketball Player"
+        class="landing-player"
+      />
+      <div class="landing-content">
+        <div class="landing-title">FUNDAMENTALS</div>
+        <div class="landing-info">
+          <p>Track your skills, trust your progress, and grow your game.</p>
+          <a class="cta" href="./pages/sign-up.html">SIGN UP NOW</a>
+        </div>
+      </div>
+    </section>
 
-</body>
+    <section class="testimonial">
+      <div class="testimonial-titles">
+        <div class="testimonial-title">
+          WHAT OUR <span style="color: white">USERS</span> SAY
+        </div>
+        <p>Hear from players who started with the Fundamentals.</p>
+      </div>
+
+      <div class="testimonial-cards no-scrollbar">
+        <div class="testimonial-card">
+          <img src="./assets/index/ahorro.jpg" alt="players" class="players" />
+          <p>
+            As someone who supports JB at every game, I've witnessed firsthand
+            how Fundamentals has transformed his performance on the court. The
+            app has helped me understand basketball metrics better, making our
+            post-game discussions more insightful. It's not just for players -
+            it's for anyone who loves the game!
+          </p>
+          <span class="player-name">Sophia Leigh Ahorro</span>
+          <p>Basketball fan</p>
+        </div>
+
+        <div class="testimonial-card">
+          <img
+            src="./assets/index/natividad.jpg"
+            alt="players"
+            class="players"
+          />
+          <p>
+            Being part of the CCIT basketball team means I need to constantly
+            elevate my game. Fundamentals gives me the structure and
+            accountability I was missing. My coach has noticed the difference in
+            my consistency and basketball IQ since I started using the app.
+          </p>
+          <span class="player-name">JB Natividad</span>
+          <p>Basketball player</p>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="./assets/index/silagan.jpg" alt="players" class="players" />
+          <p>
+            As someone who competes in various open leagues, I needed a way to
+            stay consistent between games and tournaments. Fundamentals has
+            become my training companion, helping me identify patterns in my
+            performance and areas to improve. Now I feel more prepared and
+            confident whenever I step on the court.
+          </p>
+          <span class="player-name">Jose Neil Silagan Jr.</span>
+          <p>Basketball player</p>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="./assets/index/naval.jpg" alt="players" class="players" />
+          <p>
+            Fundamentals has been a game-changer for my basketball journey. The
+            skill tracking helps me identify my weaknesses and consistently work
+            on them. After three months of using this app, my shooting
+            percentage improved. The drill suggestions are perfect for focused
+            practice.
+          </p>
+          <span class="player-name">Christopher Naval</span>
+          <p>Basketball player</p>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <img
+          class="carousel-btn left"
+          src="./assets/buttons/left-button.svg"
+          alt="Previous"
+        />
+        <img
+          class="carousel-btn right"
+          src="./assets/buttons/right-button.svg"
+          alt="Next"
+        />
+      </div>
+      <img src="assets/index/ball.png" alt="ball" class="ball first" />
+      <img src="assets/index/ball.png" alt="ball" class="ball second" />
+      <img src="assets/index/ball.png" alt="ball" class="ball third" />
+      <img src="assets/index/ball.png" alt="ball" class="ball fourth" />
+    </section>
+    <section class="about-us">
+      <div class="about-us-header">
+        <div class="image-container">
+          <img src="./assets/members/tope.png" alt="tupe pic" class="first" />
+          <img src="./assets/members/rj.png" alt="rj pic" class="second" />
+          <img src="./assets/members/iya.png" alt="iya pic" class="third" />
+          <img src="./assets/members/jb.png" alt="jb pic" class="fourth" />
+        </div>
+        <div class="about-us-title">
+          <span>ABOUT US</span>
+          <p>meet our team.</p>
+        </div>
+      </div>
+      <div class="about-us-content">
+        <p>
+          We’re a group of four students who combined our passion for basketball
+          and technology to create Fundamentals—a skills tracker made for
+          players who want to improve every day. <br /><br />
+          Three of us are student-athletes who know what it takes to build up
+          your game from the ground up. We’ve spent hours practicing, looking
+          for drills, and trying to stay consistent. We wanted a better way to
+          stay on track—and that’s how Fundamentals was born. <br />
+          <br />
+          With our combined experience in sports and web development, we created
+          a tool that’s simple, practical, and built to support every player’s
+          growth—whether you're just starting out or training daily.
+        </p>
+        <img
+          src="./assets/index/about_player.png"
+          alt=""
+          class="about-player"
+        />
+      </div>
+    </section>
+    <footer>
+      <img src="./assets/fundamentals.png" alt="fundamentals logo" />
+      <div class="soc-container">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1077/1077042.png"
+          alt="ig icon"
+        />
+        <img
+          src="   https://cdn-icons-png.flaticon.com/512/20/20837.png "
+          alt="fb icon"
+        />
+        <img
+          src="   https://cdn-icons-png.flaticon.com/512/733/733635.png "
+          alt="twitter logo "
+        />
+      </div>
+      <span>&copy; all rights reserved</span>
+    </footer>
+  </body>
 </html>

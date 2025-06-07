@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: solid;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #fef9f3;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.nav-links {
+  display: flex; /* Add display: flex */
+  justify-content: center;
+  flex-grow: 1; /* Allow it to take available space */
+  align-items: center;
+  gap: clamp(10px, 10%, 100px);
+}
+
+.nav-link:hover {
+  background-color: #1c1c1c;
+  color: #fef9f3;
+}
+
+.nav-link.active {
+  background-color: #1c1c1c;
+  color: #fef9f3;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: clamp(0.5rem, 1vw, 1rem);
+}
+
+#profile {
+  width: clamp(20px, 10%, 50px);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  padding-bottom: 100px;
+  gap: 50px;
+  background: linear-gradient(
+    120deg,
+    #fef9f3 0%,
+    #fef9f3 40%,
+    #ed8732 40%,
+    #ed8732 77%,
+    #fef9f3 77%,
+    #fef9f3 100%
+  );
+}
+
+nav {
+  padding: 20px clamp(10px, 5%, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  margin-left: clamp(30px, 10vw, 100px);
+}
+
+.hero h1 {
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  font-size: clamp(4rem, 8vw + 1rem, 8rem);
+}
+
+.hero p {
+  font-size: clamp(0.7rem, 0.5vw + 0.8rem, 1rem);
+  width: clamp(100px, 50vw, 500px);
+}
+
+.workouts {
+  display: flex;
+  flex: 1;
+}
+
+.workout-card {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.workout-card a {
+  color: inherit; /* Keeps text color consistent */
+  text-decoration: none; /* Removes underline */
+}
+
+.workout-card img {
+  aspect-ratio: 1/1;
+  width: clamp(50px, 20vw, 100px);
+}
+
+.workout-card span {
+  color: #fef9f3;
+  font-weight: 500;
+  font-size: clamp(0, 5rem, 1vw + 1.5rem, 1.5rem);
+}
+
+#ready-workout {
+  background-image: linear-gradient(
+      rgba(28, 28, 28, 0.55),
+      rgba(28, 28, 28, 0.55)
+    ),
+    url(../assets/ready-workout.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#my-workout {
+  background-image: linear-gradient(
+      rgba(28, 28, 28, 0.55),
+      rgba(28, 28, 28, 0.55)
+    ),
+    url(../assets/my-workout.png);
+  background-size: cover;
+  background-position: center;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentals</title>
+    <link rel="icon" type="image/png" href="/assets/fundamentals.png" />
+    <link rel="stylesheet" href="/styles/homepage.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="header-right">
+        <img src="/assets/fundalogo.png" class="logo" alt="Fundamentals Logo" />
+        <div class="nav-links">
+          <a href="./homepage.html" class="nav-link active">HOME</a>
+          <a href="./workout.html" class="nav-link">WORKOUTS</a>
+          <a href="./drills.html" class="nav-link">DRILLS</a>
+        </div>
+        <div class="user-profile">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/456/456212.png"
+            alt="User Profile"
+            onclick="toggleMenu()"
+          />
+        </div>
+        <div class="menu-container" id="menuOpen">
+          <div class="menu">
+            <a href="/pages/settings.html" class="menu-link">
+              <p>SETTINGS</p>
+            </a>
+            <a href="/pages/sign-in.html" class="menu-link">
+              <p>LOG OUT</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <section class="left-panel">
+        <div class="left-image">
+          <img src="/assets/freethrow-shadow.png" alt="Basketball Player" />
+        </div>
+      </section>
+
+      <section class="right-panel">
+        <div class="top">
+          <div class="welcome-user">
+            <h1>Hi! USER!</h1>
+            <p>Ready to level up your game today?</p>
+          </div>
+
+          <div class="welcome-image">
+            <img src="/assets/ballwithhand.png" alt="Basketball on finger" />
+          </div>
+        </div>
+
+        <div class="bottom">
+          <div class="user-progress">
+            <h2>Your Progress</h2>
+            <div class="skill-row">
+              <span class="skill-value">0</span>
+              <div class="skill-line-container">
+                <span class="skill-name">Dribbling</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-value">0</span>
+              <div class="skill-line-container">
+                <span class="skill-name">Shooting</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-value">0</span>
+              <div class="skill-line-container">
+                <span class="skill-name">Passing</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-value">0</span>
+              <div class="skill-line-container">
+                <span class="skill-name">Rebounding</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-value">0</span>
+              <div class="skill-line-container">
+                <span class="skill-name">Defense</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="donut"></canvas>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/controllers/homepage.js"></script>
+  </body>
+</html>

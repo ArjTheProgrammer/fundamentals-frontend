@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentals</title>
+    <link rel="icon" type="image/png" href="/assets/fundamentals.png" />
+    <link rel="stylesheet" href="/styles/readyworkouts.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/controllers/readyworkouts.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navigation -->
+      <nav class="main-nav">
+        <div class="nav-logo"></div>
+        <div class="nav-links">
+          <a href="./homepage.html" class="nav-link">HOME</a>
+          <a href="./workout.html" class="nav-link active">WORKOUTS</a>
+          <a href="./drills.html" class="nav-link">DRILLS</a>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="orange-text">READY</span> WORKOUTS
+          </h1>
+          <p class="hero-subtitle">
+            Pre-designed workouts to improve your basketball skills.
+          </p>
+        </div>
+        <img src="/assets/ball.png" alt="Basketball" class="basketball-image" />
+        <div class="hero-images">
+          <img
+            src="/assets/stretching.png"
+            alt="Athlete"
+            class="athlete-image athlete1"
+          />
+          <img
+            src="/assets/foot-stretch.png"
+            alt="Athlete"
+            class="athlete-image athlete2"
+          />
+          <img
+            src="/assets/smile-stretch.png"
+            alt="Athlete"
+            class="athlete-image athlete3"
+          />
+        </div>
+      </section>
+
+      <!-- Workouts Grid -->
+      <section class="workouts-container" id="workouts-container">
+        <!-- Workout cards will be dynamically inserted here -->
+      </section>
+    </div>
+    <dialog id="viewWorkout">
+      <div class="dialog-content">
+        <button id="closeDialog">X</button>
+        <h2>Workout Title</h2>
+        <p>workout description</p>
+        <h3>Skills and Drills</h3>
+        <div class="drills-container">
+          <div class="drill">
+            <div class="drill-title">
+              <h4>Drill Title</h4>
+              <span>Dibbling</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.
+            </p>
+          </div>
+          <div class="drill">
+            <div class="drill-title">
+              <h4>Drill Title</h4>
+              <span>Dibbling</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.
+            </p>
+          </div>
+          <div class="drill">
+            <div class="drill-title">
+              <h4>Drill Title</h4>
+              <span>Dibbling</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.
+            </p>
+          </div>
+        </div>
+        <button id="start">Start</button>
+      </div>
+    </dialog>
+  </body>
+</html>

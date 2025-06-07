@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentals</title>
+    <link rel="icon" type="image/png" href="/assets/fundamentals.png" />
+    <link rel="stylesheet" href="/styles/startWorkout.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../controllers/startWorkout.js" defer></script>
+  </head>
+  <body>
+    <section class="progress-bars" id="progressBars">
+      <!-- Progress bars will be dynamically generated -->
+    </section>
+    <main>
+      <h2>Drill <span>1</span> of <span>5</span></h2>
+      <div class="title">
+        <h1 class="drill_name">Loading...</h1>
+        <span class="skill">Loading...</span>
+      </div>
+      <p>Loading drill instructions...</p>
+      <iframe
+        width="700"
+        height="400"
+        src=""
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <button id="continueButton">Continue</button>
+    </main>
+    <dialog id="finish">
+      <img src="../assets/medal.png" alt="medal" />
+      <h1>Congratulations!</h1>
+      <p>You just got one step better. Keep showing up.</p>
+      <button id="toWorkoutsButton">To workouts</button>
+    </dialog>
+  </body>
+</html>

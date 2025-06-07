@@ -1,0 +1,192 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fef9f3;
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+.progress-bars {
+  padding: 20px 50px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.bar {
+  flex: 1;
+  height: 10px;
+  background-color: #ed8632b0;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  min-width: 40px;
+}
+
+.done {
+  background-color: #ed8632;
+}
+
+main {
+  padding: 10px 50px;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+main.fade-out {
+  opacity: 0;
+}
+
+main h2 {
+  font-size: 32px;
+}
+
+main h2 span {
+  color: #ed8632;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.title h1 {
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  font-size: clamp(40px, 8vw, 70px);
+  margin: 0;
+}
+
+.skill {
+  align-self: end;
+  background-color: #ed8632;
+  padding: 5px 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+main p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+main iframe {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 700px;
+  height: clamp(200px, 50vw, 400px);
+}
+
+main button {
+  font-size: 24px;
+  background-color: #1c1c1c;
+  color: #fef9f3;
+  flex-grow: 0;
+  border-radius: 20px;
+  padding: 10px 30px;
+  align-self: end;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+main button:hover {
+  transform: translateY(-2px);
+  background-color: #333;
+}
+
+main button:active {
+  transform: translateY(0);
+}
+
+dialog {
+  padding: 50px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  max-width: 90%;
+}
+
+dialog * {
+  margin: 0;
+}
+
+dialog h1 {
+  margin-top: 20px;
+  font-weight: 400;
+  font-family: "Bebas Neue";
+}
+
+dialog p {
+  margin: 15px 0 25px 0;
+  text-align: center;
+}
+
+dialog img {
+  aspect-ratio: 1/1;
+  width: clamp(150px, 60vw, 300px);
+}
+
+dialog button {
+  font-size: 24px;
+  margin-top: 20px;
+  background-color: #1c1c1c;
+  color: #fef9f3;
+  flex-grow: 0;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+dialog button:hover {
+  transform: translateY(-2px);
+  background-color: #333;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+dialog[open] {
+  display: flex;
+}
+
+.error-message {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 10px 20px;
+  }
+
+  .progress-bars {
+    padding: 20px;
+  }
+
+  main button {
+    align-self: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  dialog {
+    padding: 30px 20px;
+  }
+}
