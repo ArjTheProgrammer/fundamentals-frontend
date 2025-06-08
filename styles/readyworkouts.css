@@ -159,15 +159,15 @@ nav {
   align-items: center;
   justify-content: space-evenly;
   gap: clamp(20px, 10vw, 50px);
-  padding: clamp(10px, 50vw, 20px);
+  padding: clamp(10px, 5vw, 20px);
   margin-bottom: 50px;
 }
 
 .workout-card {
   background-color: #ed8732;
-  width: clamp(300px, 40vw, 390px);
+  width: clamp(300px, 40vw, 500px);
   height: clamp(100px, 20vw, 200px);
-  padding: clamp(0px, 10vw, 30px) clamp(10px, 10vw, 20px);
+  padding: clamp(15px, 5vw, 30px) clamp(10px, 5vw, 20px);
   border-radius: 20px;
   display: flex;
   cursor: pointer;
@@ -182,8 +182,11 @@ nav {
 .workout-title {
   font-family: "Bebas Neue";
   font-weight: 400;
-  font-size: clamp(1rem, 5vw, 3rem);
+  font-size: clamp(1rem, 3.6vw, 3rem);
   line-height: 90%;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tags {
