@@ -147,26 +147,22 @@ nav {
   align-items: center;
   justify-content: space-evenly;
   gap: clamp(20px, 10vw, 50px);
-  padding: clamp(10px, 50vw, 20px);
+  padding: clamp(10px, 5vw, 20px);
   margin-bottom: 50px;
 }
 
 .workout-card {
   background-color: #ed8732;
-  width: clamp(300px, 40vw, 390px);
-  height: clamp(
-    100px,
-    20vw,
-    200px
-  ); /* Changed from height: auto to fixed height */
-  padding: clamp(0px, 10vw, 30px) clamp(10px, 10vw, 20px);
+  width: clamp(300px, 40vw, 500px);
+  height: clamp(100px, 20vw, 200px);
+  padding: clamp(15px, 5vw, 30px) clamp(10px, 5vw, 20px);
   border-radius: 20px;
   display: flex;
   cursor: pointer;
   flex-direction: column;
   gap: clamp(3px, 1vw, 10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for smoother hover effects */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Added initial box-shadow to match */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .workout-card:hover {
@@ -177,8 +173,11 @@ nav {
 .workout-title {
   font-family: "Bebas Neue";
   font-weight: 400;
-  font-size: clamp(1rem, 5vw, 3rem);
+  font-size: clamp(1rem, 3.6vw, 3rem);
   line-height: 90%;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tags {
@@ -199,15 +198,15 @@ nav {
 
 .workout-description {
   font-style: italic;
-  font-size: clamp(0.7rem, 1vw, 1rem);
+  font-size: clamp(0.5rem, 1vw, 1rem);
 }
 
 .edit-icon {
   margin-top: auto;
   align-self: end;
   color: #1c1c1c;
-  width: 30px;
-  height: 30px;
+  width: clamp(20px, 4vw, 30px);
+  height: clamp(20px, 4vw, 30px);
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -215,7 +214,8 @@ nav {
 
 .edit-icon img {
   aspect-ratio: 1 / 1;
-  width: 20px;
+  width: clamp(15px, 3vw, 20px);
+  height: auto;
 }
 
 .hero-content {
