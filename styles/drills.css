@@ -106,12 +106,14 @@ nav {
 
 .tag-container {
   margin: 10px 0px;
+  text-wrap: wrap;
 }
 
 .tag-container span {
   background-color: #fef9f3;
   padding: 0px 10px;
   border-radius: 20px;
+  text-wrap: nowrap;
   font-size: clamp(0.7rem, 1vw, 1rem);
 }
 
