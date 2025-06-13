@@ -28,7 +28,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
+  background-color: #fef9f3;
 }
 
 .nav-links {
@@ -74,10 +74,10 @@ nav {
   position: relative;
   background: linear-gradient(
     177deg,
-    #ffffff 0%,
-    #ffffff 70%,
-    #ffffff 70%,
-    #ffffff 70%,
+    #fef9f3 0%,
+    #fef9f3 70%,
+    #fef9f3 70%,
+    #fef9f3 70%,
     #1c1c1c 71%
   );
   height: clamp(300px, 30vw, 500px);
